@@ -5,8 +5,6 @@ as a networking extension for the
 [https://github.com/nicholas-maltbie/StateMachineUnity](https://github.com/nicholas-maltbie/StateMachineUnity)
 project.
 
-![Example importing package from git.](Demo/project_demo.png)
-
 If you want to host and share code between unity projects easily,
 use this project to configure unity builds.
 
