@@ -1,9 +1,9 @@
 apiRules:
 - include:
-    uidRegex: ^nickmaltbie\.TemplateUnityPackage
+    uidRegex: ^nickmaltbie\.NetworkStateMachineUnity
     type: Namespace
 - include:
-    uidRegex: ^nickmaltbie\.TemplateUnityPackage\.*
+    uidRegex: ^nickmaltbie\.NetworkStateMachineUnity\.*
     type: Namespace
 - exclude:
     uidRegex: .*
