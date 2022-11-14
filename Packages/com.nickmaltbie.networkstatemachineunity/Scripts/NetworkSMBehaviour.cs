@@ -17,10 +17,12 @@
 // SOFTWARE.
 
 using System;
+using nickmaltbie.StateMachineUnity;
 using nickmaltbie.StateMachineUnity.Attributes;
 using nickmaltbie.StateMachineUnity.Event;
 using nickmaltbie.StateMachineUnity.Utils;
 using nickmaltbie.TestUtilsUnity;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace nickmaltbie.NetworkStateMachineUnity
@@ -49,9 +51,14 @@ namespace nickmaltbie.NetworkStateMachineUnity
         protected float fixedDeltaTimeInCurrentState;
 
         /// <summary>
+        /// Networked state for the state machine synced over the network communication.
+        /// </summary>
+        protected NetworkVariable<Type> networkedState;
+
+        /// <summary>
         /// Current state of the state machine.
         /// </summary>
-        public NetworkVariable<Type> CurrentState { get; private set; }
+        public Type CurrentState { get => networkedState.Value; private set => networkedState.Value = value; }
 
         /// <summary>
         /// Initializes a state machine

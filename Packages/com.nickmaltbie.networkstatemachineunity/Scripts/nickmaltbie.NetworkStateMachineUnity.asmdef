@@ -2,9 +2,10 @@
     "name": "nickmaltbie.NetworkStateMachineUnity",
     "rootNamespace": "nickmaltbie.NetworkStateMachineUnity",
     "references": [
-        "nickmaltbie.NetworkStateMachineUnity",
+        "nickmaltbie.StateMachineUnity",
         "nickmaltbie.TestUtilsUnity",
-        "com.unity.netcode.gameobjects"
+        "Unity.Netcode.Components",
+        "Unity.Netcode.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
