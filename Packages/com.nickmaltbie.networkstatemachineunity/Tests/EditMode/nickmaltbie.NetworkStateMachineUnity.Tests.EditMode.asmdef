@@ -2,7 +2,12 @@
     "name": "nickmaltbie.NetworkStateMachineUnity.Tests.EditMode",
     "rootNamespace": "nickmaltbie.NetworkStateMachineUnity.Tests.EditMode",
     "references": [
-        "nickmaltbie.NetworkStateMachineUnity"
+        "nickmaltbie.NetworkStateMachineUnity",
+        "nickmaltbie.StateMachineUnity",
+        "nickmaltbie.TestUtilsUnity",
+        "nickmaltbie.TestUtilsUnity.Tests.TestCommon",
+        "Unity.InputSystem",
+        "Unity.InputSystem.TestFramework"
     ],
     "optionalUnityReferences": [
         "TestAssemblies"
@@ -15,7 +20,7 @@
     "overrideReferences": true,
     "precompiledReferences": [],
     "autoReferenced": false,
-    "defineConstraints": [],
+    "defineConstraints": [ ],
     "versionDefines": [],
     "noEngineReferences": false
 }

@@ -16,34 +16,19 @@
 // ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+using nickmaltbie.NetworkStateMachineUnity;
+using nickmaltbie.TestUtilsUnity.Tests.TestCommon;
+using NUnit.Framework;
 using UnityEngine;
 
-namespace nickmaltbie.NetworkStateMachineUnity
+namespace nickmaltbie.NetworkStateMachineUnity.Tests.EditMode
 {
     /// <summary>
-    /// Basic sample script in project.
+    /// Tests meant to be run in EditMode.
     /// </summary>
-    public class SampleScript : MonoBehaviour
+    public class NetworkSMBehaviourTests : TestBase
     {
-        /// <summary>
-        /// Value associated with sample script.
-        /// </summary>
-        public int Value { get; private set; } = 0;
+        public NetworkSMBehaviour networkSMBehaviour;
 
-        /// <summary>
-        /// Increment value associated with sample script.
-        /// </summary>
-        public void IncrementValue()
-        {
-            Value++;
-        }
-
-        /// <summary>
-        /// Update function run each frame.
-        /// </summary>
-        public void Update()
-        {
-            IncrementValue();
-        }
     }
 }
