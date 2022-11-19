@@ -81,6 +81,7 @@ namespace nickmaltbie.NetworkStateMachineUnity
         /// </summary>
         public NetworkSMBehaviour()
         {
+            FSMUtils.SetupCache(GetType());
             NetworkSMUtils.SetupNetworkCache(GetType());
             deltaTimeInCurrentState = 0.0f;
             fixedDeltaTimeInCurrentState = 0.0f;
