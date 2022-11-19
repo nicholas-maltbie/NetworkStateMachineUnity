@@ -17,6 +17,7 @@
 // SOFTWARE.
 
 using System;
+using nickmaltbie.NetworkStateMachineUnity.Utils;
 using nickmaltbie.StateMachineUnity;
 using nickmaltbie.StateMachineUnity.Attributes;
 using nickmaltbie.StateMachineUnity.Event;
@@ -51,26 +52,47 @@ namespace nickmaltbie.NetworkStateMachineUnity
         protected float fixedDeltaTimeInCurrentState;
 
         /// <summary>
+        /// Has this network sm behaviour been initialized.
+        /// </summary>
+        protected bool initialized = false;
+
+        /// <summary>
         /// Networked state for the state machine synced over the network communication.
         /// </summary>
-        protected NetworkVariable<Type> networkedState;
+        protected NetworkVariable<int> networkedState = new NetworkVariable<int>(
+            value: -1,
+            readPerm: NetworkVariableReadPermission.Everyone,
+            writePerm: NetworkVariableWritePermission.Owner);
 
         /// <summary>
         /// Current state of the state machine.
         /// </summary>
-        public Type CurrentState { get => networkedState.Value; private set => networkedState.Value = value; }
+        public Type CurrentState
+        {
+            get => NetworkSMUtils.LookupIndexState(GetType(), networkedState.Value);
+            private set => networkedState.Value = NetworkSMUtils.LookupStateIndex(GetType(), value);
+        }
 
         /// <summary>
         /// Initializes a state machine
         /// and will set the initial
         /// state to the state defined under this class with a
-        /// (InitialStateAttribute)pxref:nickmaltbie.StateMachineUnity.Attributes.InitialStateAttribute].
+        /// (InitialStateAttribute)[xref:nickmaltbie.StateMachineUnity.Attributes.InitialStateAttribute].
         /// </summary>
         public NetworkSMBehaviour()
         {
-            FSMUtils.InitializeStateMachine(this);
+            NetworkSMUtils.SetupNetworkCache(GetType());
             deltaTimeInCurrentState = 0.0f;
             fixedDeltaTimeInCurrentState = 0.0f;
+        }
+
+        /// <summary>
+        /// Initialize the network SM Behaviour.
+        /// </summary>
+        public virtual void Start()
+        {
+            initialized = true;
+            FSMUtils.InitializeStateMachine(this);
         }
 
         /// <summary>
@@ -92,15 +114,21 @@ namespace nickmaltbie.NetworkStateMachineUnity
         /// <param name="evt">Event to send to this state machine.</param>
         public virtual void RaiseEvent(IEvent evt)
         {
-            FSMUtils.RaiseCachedEvent(this, evt);
+            if (initialized)
+            {
+                FSMUtils.RaiseCachedEvent(this, evt);
+            }
         }
 
         /// <inheritdoc/>
         public void SetStateQuiet(Type newState)
         {
-            deltaTimeInCurrentState = 0.0f;
-            fixedDeltaTimeInCurrentState = 0.0f;
-            CurrentState = newState;
+            if (initialized)
+            {
+                deltaTimeInCurrentState = 0.0f;
+                fixedDeltaTimeInCurrentState = 0.0f;
+                CurrentState = newState;
+            }
         }
 
         /// <summary>
@@ -116,7 +144,7 @@ namespace nickmaltbie.NetworkStateMachineUnity
                     is TransitionAfterTimeAttribute timeoutAttr &&
                 !timeoutAttr.FixedUpdate)
             {
-                if (timeoutAttr.TimeToTransition <= deltaTimeInCurrentState)
+                if (base.IsOwner && timeoutAttr.TimeToTransition <= deltaTimeInCurrentState)
                 {
                     RaiseEvent(StateTimeoutEvent.Instance);
                 }
