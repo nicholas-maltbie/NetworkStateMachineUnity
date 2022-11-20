@@ -19,15 +19,18 @@
 using System;
 using System.Collections;
 using System.Collections.Concurrent;
+using Moq;
 using nickmaltbie.StateMachineUnity;
 using nickmaltbie.StateMachineUnity.Attributes;
 using nickmaltbie.StateMachineUnity.Event;
+using nickmaltbie.TestUtilsUnity;
 using NUnit.Framework;
 using Unity.Netcode;
 using Unity.Netcode.RuntimeTests;
 using Unity.Netcode.TestHelpers.Runtime;
 using UnityEngine;
 using UnityEngine.TestTools;
+using static nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour;
 
 namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
 {
@@ -205,6 +208,8 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
 
         private GameObject m_PrefabToSpawn;
 
+        private Mock<IUnityService> unityServiceMock;
+
         protected override void OnServerAndClientsCreated()
         {
             m_PrefabToSpawn = CreateNetworkObjectPrefab("DemoNetworkSMBehaviour");
@@ -214,6 +219,8 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
         [UnitySetUp]
         public IEnumerator SetupTest()
         {
+            unityServiceMock = new Mock<IUnityService>();
+
             // create 3 objects
             for (int objectIndex = 0; objectIndex < 3; objectIndex++)
             {
@@ -224,7 +231,8 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
                 {
                     ownerManager = m_ClientNetworkManagers[objectIndex - 1];
                 }
-                SpawnObject(m_PrefabToSpawn, ownerManager);
+                DemoNetworkSMBehaviour demoBehaviour = SpawnObject(m_PrefabToSpawn, ownerManager).GetComponent<DemoNetworkSMBehaviour>();
+                demoBehaviour.unityService = unityServiceMock.Object;
 
                 // wait for each object to spawn on each client
                 for (int clientIndex = 0; clientIndex < 3; clientIndex++)
@@ -237,10 +245,95 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
             }
         }
 
-        [UnityTest]
-        public IEnumerator TimeoutAfterUpdate()
+        [Test]
+        public void TimoutAfterUpdate()
         {
-            yield return null;
+            for (int i = 0; i < 3; i++)
+            {
+                unityServiceMock.Setup(e => e.deltaTime).Returns(1.0f);
+                DemoNetworkSMBehaviour sm = DemoNetworkSMBehaviour.Objects[i, i];
+                sm.SetStateQuiet(typeof(StartingState));
+                sm.unityService = unityServiceMock.Object;
+
+                Assert.AreEqual(typeof(StartingState), sm.CurrentState);
+                sm.Update();
+                Assert.AreEqual(typeof(StartingState), sm.CurrentState);
+
+                unityServiceMock.Setup(e => e.deltaTime).Returns(1000.0f);
+                sm.Update();
+                Assert.AreEqual(typeof(TimeoutState), sm.CurrentState);
+
+                Assert.AreEqual(sm.eventCounts[typeof(StateTimeoutEvent)], 1);
+
+                sm.RaiseEvent(new ResetEvent());
+                Assert.AreEqual(typeof(StartingState), sm.CurrentState);
+            }
+        }
+
+        [Test]
+        public void FixedTimoutAfterUpdate()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                unityServiceMock.Setup(e => e.fixedDeltaTime).Returns(1.0f);
+                DemoNetworkSMBehaviour sm = DemoNetworkSMBehaviour.Objects[i, i];
+                sm.SetStateQuiet(typeof(StartingState));
+
+                sm.unityService = unityServiceMock.Object;
+
+                sm.RaiseEvent(new TestEvent());
+                Assert.AreEqual(sm.CurrentState, typeof(TempFixedTimeState));
+                sm.FixedUpdate();
+                Assert.AreEqual(sm.CurrentState, typeof(TempFixedTimeState));
+
+                unityServiceMock.Setup(e => e.fixedDeltaTime).Returns(1000.0f);
+                sm.FixedUpdate();
+                Assert.AreEqual(sm.CurrentState, typeof(TimeoutFixedState));
+
+                Assert.AreEqual(sm.eventCounts[typeof(StateTimeoutEvent)], 1);
+
+                sm.RaiseEvent(new ResetEvent());
+                Assert.AreEqual(sm.CurrentState, typeof(StartingState));
+            }
+        }
+
+        [Test]
+        public void VerifyUpdateActionCounts()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                unityServiceMock.Setup(e => e.fixedDeltaTime).Returns(1.0f);
+                DemoNetworkSMBehaviour sm = DemoNetworkSMBehaviour.Objects[i, i];
+                sm.unityService = unityServiceMock.Object;
+                sm.SetStateQuiet(typeof(StartingState));
+
+                sm.Update();
+                Assert.GreaterOrEqual(sm.actionStateCounts[(typeof(OnUpdateAttribute), typeof(StartingState))], 1);
+
+                sm.FixedUpdate();
+                Assert.GreaterOrEqual(sm.actionStateCounts[(typeof(OnFixedUpdateAttribute), typeof(StartingState))], 1);
+
+                sm.LateUpdate();
+                Assert.GreaterOrEqual(sm.actionStateCounts[(typeof(OnLateUpdateAttribute), typeof(StartingState))], 1);
+
+                sm.OnGUI();
+                Assert.GreaterOrEqual(sm.actionStateCounts[(typeof(OnGUIAttribute), typeof(StartingState))], 1);
+
+                sm.OnEnable();
+                Assert.GreaterOrEqual(sm.actionStateCounts[(typeof(OnEnableAttribute), typeof(StartingState))], 1);
+
+                sm.OnDisable();
+                Assert.GreaterOrEqual(sm.actionStateCounts[(typeof(OnDisableAttribute), typeof(StartingState))], 1);
+
+                sm.OnAnimatorIK();
+                Assert.GreaterOrEqual(sm.actionStateCounts[(typeof(OnAnimatorIKAttribute), typeof(StartingState))], 1);
+
+                sm.RaiseEvent(new AEvent());
+                Assert.GreaterOrEqual(sm.actionStateCounts.GetOrAdd((typeof(OnUpdateAttribute), typeof(StateA)), t => 0), 0);
+
+                sm.Update();
+                Assert.GreaterOrEqual(sm.actionStateCounts.GetOrAdd((typeof(OnUpdateAttribute), typeof(StateA)), t => 0), 1);
+            }
         }
     }
 }
