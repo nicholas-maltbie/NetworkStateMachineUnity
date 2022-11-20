@@ -25,11 +25,12 @@ jobs:
 
       - name: Run All Tests for Unity ${{ env.UNITY_VERSION }}
         id: tests
-        uses: game-ci/unity-test-runner@v2.0.2
+        uses: game-ci/unity-test-runner@v2.1.0
         with:
           unityVersion: ${{ env.UNITY_VERSION }}
           testMode: All
           checkName: All Test Results
+          customParameters: -testFilter "nickmaltbie.NetworkStateMachineUnity.*"
           coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+nickmaltbie.NetworkStateMachineUnity'
 
       - name: Copy Coverage Results
