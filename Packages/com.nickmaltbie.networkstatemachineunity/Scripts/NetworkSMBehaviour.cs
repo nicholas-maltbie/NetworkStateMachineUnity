@@ -24,7 +24,6 @@ using nickmaltbie.StateMachineUnity.Event;
 using nickmaltbie.StateMachineUnity.Utils;
 using nickmaltbie.TestUtilsUnity;
 using Unity.Netcode;
-using UnityEngine;
 
 namespace nickmaltbie.NetworkStateMachineUnity
 {

@@ -73,8 +73,8 @@ namespace nickmaltbie.NetworkStateMachineUnity
                     argDictionary.Add(arg, value);
                 }
             }
+
             return argDictionary;
         }
     }
-
 }

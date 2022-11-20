@@ -43,7 +43,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Utils
 
             return SMStateIndexLookup[stateMachine][state];
         }
-        
+
         public static Type LookupIndexState(Type stateMachine, int index)
         {
             if (index == -1)
@@ -58,7 +58,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Utils
         {
             // Find all the supported states for the state machine.
             int index = 0;
-            
+
             foreach (Type state in stateMachine.GetNestedTypes()
                 .Where(type => type.IsClass && type.IsSubclassOf(typeof(State)))
                 .OrderBy(type => type.FullName))

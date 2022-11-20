@@ -26,7 +26,6 @@ using nickmaltbie.StateMachineUnity.Event;
 using nickmaltbie.TestUtilsUnity;
 using NUnit.Framework;
 using Unity.Netcode;
-using Unity.Netcode.RuntimeTests;
 using Unity.Netcode.TestHelpers.Runtime;
 using UnityEngine;
 using UnityEngine.TestTools;
@@ -202,7 +201,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
     /// Simple tests meant to be run in PlayMode
     /// </summary>
     [TestFixture]
-    public class NetworkSMBehaviourTests : NetcodeIntegrationTest 
+    public class NetworkSMBehaviourTests : NetcodeIntegrationTest
     {
         protected override int NumberOfClients => 2;
 
@@ -231,6 +230,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
                 {
                     ownerManager = m_ClientNetworkManagers[objectIndex - 1];
                 }
+
                 DemoNetworkSMBehaviour demoBehaviour = SpawnObject(m_PrefabToSpawn, ownerManager).GetComponent<DemoNetworkSMBehaviour>();
                 demoBehaviour.unityService = unityServiceMock.Object;
 
