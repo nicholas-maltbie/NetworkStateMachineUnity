@@ -2,7 +2,14 @@
     "name": "nickmaltbie.NetworkStateMachineUnity.Tests.EditMode",
     "rootNamespace": "nickmaltbie.NetworkStateMachineUnity.Tests.EditMode",
     "references": [
-        "nickmaltbie.NetworkStateMachineUnity"
+        "nickmaltbie.NetworkStateMachineUnity",
+        "nickmaltbie.StateMachineUnity",
+        "nickmaltbie.TestUtilsUnity",
+        "nickmaltbie.TestUtilsUnity.Tests.TestCommon",
+        "Unity.InputSystem",
+        "Unity.InputSystem.TestFramework",
+        "Unity.Netcode.Components",
+        "Unity.Netcode.Runtime"
     ],
     "optionalUnityReferences": [
         "TestAssemblies"
@@ -13,7 +20,9 @@
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
-    "precompiledReferences": [],
+    "precompiledReferences": [
+        "Moq.dll"
+    ],
     "autoReferenced": false,
     "defineConstraints": [],
     "versionDefines": [],

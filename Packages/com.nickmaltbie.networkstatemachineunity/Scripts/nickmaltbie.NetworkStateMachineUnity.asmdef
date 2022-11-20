@@ -1,7 +1,12 @@
 {
     "name": "nickmaltbie.NetworkStateMachineUnity",
     "rootNamespace": "nickmaltbie.NetworkStateMachineUnity",
-    "references": [],
+    "references": [
+        "nickmaltbie.StateMachineUnity",
+        "nickmaltbie.TestUtilsUnity",
+        "Unity.Netcode.Components",
+        "Unity.Netcode.Runtime"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

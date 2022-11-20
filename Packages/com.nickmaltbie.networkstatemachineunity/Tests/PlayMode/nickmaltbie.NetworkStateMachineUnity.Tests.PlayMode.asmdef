@@ -2,7 +2,16 @@
     "name": "nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode",
     "rootNamespace": "nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode",
     "references": [
-        "nickmaltbie.NetworkStateMachineUnity"
+        "nickmaltbie.NetworkStateMachineUnity",
+        "nickmaltbie.StateMachineUnity",
+        "nickmaltbie.TestUtilsUnity",
+        "nickmaltbie.TestUtilsUnity.Tests.TestCommon",
+        "Unity.InputSystem",
+        "Unity.InputSystem.TestFramework",
+        "Unity.Netcode.Components",
+        "Unity.Netcode.Runtime",
+        "Unity.Netcode.RuntimeTests",
+        "Unity.Netcode.TestHelpers.Runtime"
     ],
     "optionalUnityReferences": [
         "TestAssemblies"
@@ -11,7 +20,9 @@
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
-    "precompiledReferences": [],
+    "precompiledReferences": [
+        "Moq.dll"
+    ],
     "autoReferenced": false,
     "defineConstraints": [],
     "versionDefines": [],
