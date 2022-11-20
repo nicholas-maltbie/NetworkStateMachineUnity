@@ -24,10 +24,7 @@ using nickmaltbie.StateMachineUnity;
 
 namespace nickmaltbie.NetworkStateMachineUnity.Utils
 {
-    public class UninitializedState : State
-    {
-        private UninitializedState() { }
-    }
+    public class UninitializedState : State { }
 
     public static class NetworkSMUtils
     {
