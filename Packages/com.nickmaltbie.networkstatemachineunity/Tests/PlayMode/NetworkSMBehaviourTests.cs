@@ -52,6 +52,10 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
     /// </summary>
     public class DemoNetworkSMBehaviour : NetworkSMBehaviour
     {
+        // indexed by [object, machine]
+        public static DemoNetworkSMBehaviour[,] Objects = new DemoNetworkSMBehaviour[3, 3];
+        public static int CurrentlySpawning = 0;
+
         /// <summary>
         /// Counts of actions for each combination of (Action, State).
         /// </summary>
@@ -116,6 +120,12 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
         [Transition(typeof(ResetEvent), typeof(StartingState))]
         [OnEnterState(nameof(IncrementStateEntryCount))]
         public class TimeoutFixedState : State { }
+
+        public override void OnNetworkSpawn()
+        {
+            Objects[CurrentlySpawning, NetworkManager.LocalClientId] = GetComponent<DemoNetworkSMBehaviour>();
+            Debug.Log($"Object index ({CurrentlySpawning}) spawned on client {NetworkManager.LocalClientId}");
+        }
 
         public void OnUpdateStateA()
         {
@@ -191,25 +201,46 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
     [TestFixture]
     public class NetworkSMBehaviourTests : NetcodeIntegrationTest 
     {
-        protected override int NumberOfClients => 1;
+        protected override int NumberOfClients => 2;
 
         private GameObject m_PrefabToSpawn;
 
         protected override void OnServerAndClientsCreated()
         {
-            m_PrefabToSpawn = CreateNetworkObjectPrefab("OwnerPermissionObject");
+            m_PrefabToSpawn = CreateNetworkObjectPrefab("DemoNetworkSMBehaviour");
             m_PrefabToSpawn.AddComponent<DemoNetworkSMBehaviour>();
         }
 
+        [UnitySetUp]
+        public IEnumerator SetupTest()
+        {
+            // create 3 objects
+            for (int objectIndex = 0; objectIndex < 3; objectIndex++)
+            {
+                DemoNetworkSMBehaviour.CurrentlySpawning = objectIndex;
+
+                NetworkManager ownerManager = m_ServerNetworkManager;
+                if (objectIndex != 0)
+                {
+                    ownerManager = m_ClientNetworkManagers[objectIndex - 1];
+                }
+                SpawnObject(m_PrefabToSpawn, ownerManager);
+
+                // wait for each object to spawn on each client
+                for (int clientIndex = 0; clientIndex < 3; clientIndex++)
+                {
+                    while (DemoNetworkSMBehaviour.Objects[objectIndex, clientIndex] == null)
+                    {
+                        yield return new WaitForSeconds(0.0f);
+                    }
+                }
+            }
+        }
+
         [UnityTest]
-        public IEnumerator BasicTest()
+        public IEnumerator TimeoutAfterUpdate()
         {
             yield return null;
-
-            // Create network sm behaviour
-            NetworkManager ownerManager = m_ServerNetworkManager;
-            OwnerPermissionObject.CurrentlySpawning = 0;
-            SpawnObject(m_PrefabToSpawn, ownerManager);
         }
     }
 }

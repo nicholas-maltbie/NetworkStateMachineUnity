@@ -93,7 +93,10 @@ namespace nickmaltbie.NetworkStateMachineUnity
         public virtual void Start()
         {
             initialized = true;
-            FSMUtils.InitializeStateMachine(this);
+            if (IsOwner)
+            {
+                FSMUtils.InitializeStateMachine(this);
+            }
         }
 
         /// <summary>
