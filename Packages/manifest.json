@@ -61,6 +61,7 @@
   },
   "testables": [
     "com.nickmaltbie.testutilsunity",
-    "com.unity.inputsystem"
+    "com.unity.inputsystem",
+    "com.unity.netcode.gameobjects"
   ]
 }

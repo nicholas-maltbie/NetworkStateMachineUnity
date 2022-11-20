@@ -1,26 +1,28 @@
 {
-    "name": "nickmaltbie.NetworkStateMachineUnity.Tests.EditMode",
-    "rootNamespace": "nickmaltbie.NetworkStateMachineUnity.Tests.EditMode",
+    "name": "nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode",
+    "rootNamespace": "nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode",
     "references": [
         "nickmaltbie.NetworkStateMachineUnity",
         "nickmaltbie.StateMachineUnity",
         "nickmaltbie.TestUtilsUnity",
         "nickmaltbie.TestUtilsUnity.Tests.TestCommon",
         "Unity.InputSystem",
-        "Unity.InputSystem.TestFramework"
+        "Unity.InputSystem.TestFramework",
+        "Unity.Netcode.Components",
+        "Unity.Netcode.Runtime",
+        "Unity.Netcode.RuntimeTests",
+        "Unity.Netcode.TestHelpers.Runtime"
     ],
     "optionalUnityReferences": [
         "TestAssemblies"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [],
     "autoReferenced": false,
-    "defineConstraints": [ ],
+    "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false
 }
