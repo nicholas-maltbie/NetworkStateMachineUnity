@@ -26,7 +26,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Utils
 {
     public class UninitializedState : State
     {
-
+        private UninitializedState() { }
     }
 
     public static class NetworkSMUtils
