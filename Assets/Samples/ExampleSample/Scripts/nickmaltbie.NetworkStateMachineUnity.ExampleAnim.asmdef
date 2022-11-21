@@ -1,0 +1,21 @@
+{
+    "name": "nickmaltbie.NetworkStateMachineUnity.ExampleAnim",
+    "rootNamespace": "nickmaltbie.NetworkStateMachineUnity.ExampleAnim",
+    "references": [
+        "Unity.Netcode.Runtime",
+        "nickmaltbie.NetworkStateMachineUnity",
+        "nickmaltbie.StateMachineUnity",
+        "nickmaltbie.ScreenManager.TestCommon",
+        "Unity.InputSystem",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

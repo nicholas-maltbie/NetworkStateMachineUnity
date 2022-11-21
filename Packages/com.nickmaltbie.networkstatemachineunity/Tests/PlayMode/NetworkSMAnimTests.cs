@@ -436,6 +436,38 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
             }
         }
 
+        [UnityTest]
+        public IEnumerator VerifyCrossFadeNotOwner()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (i == j)
+                    {
+                        continue;
+                    }
+
+                    unityServiceMock.Setup(e => e.deltaTime).Returns(1.0f);
+                    DemoNetworkSMAnim sm = DemoNetworkSMAnim.Objects[i, j];
+                    sm.Start();
+                    sm.unityService = unityServiceMock.Object;
+                    Animator anim = sm.GetComponent<Animator>();
+
+                    while (sm.CurrentState != typeof(StateA))
+                    {
+                        yield return null;
+                    }
+
+                    sm.CrossFade(new AnimSMRequest(AnimB));
+
+                    Assert.AreEqual(sm.CurrentState, typeof(StateA));
+                    Assert.AreEqual(sm.CurrentAnimationState, Animator.StringToHash(AnimA));
+                    Assert.AreEqual(anim.GetCurrentAnimatorStateInfo(0).shortNameHash, Animator.StringToHash(AnimA));
+                }
+            }
+        }
+
         [Test]
         public void VerifyTransitionToUnknownAnimationStateCrossFadeFixed()
         {
