@@ -6,6 +6,7 @@
         "nickmaltbie.NetworkStateMachineUnity",
         "nickmaltbie.StateMachineUnity",
         "nickmaltbie.ScreenManager.TestCommon",
+        "nickmaltbie.TestUtilsUnity",
         "Unity.InputSystem",
         "Unity.TextMeshPro"
     ],

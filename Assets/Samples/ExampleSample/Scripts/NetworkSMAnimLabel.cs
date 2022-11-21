@@ -22,19 +22,19 @@ using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace nickmaltbie.NetworkStateMachineUnity.Example
+namespace nickmaltbie.NetworkStateMachineUnity.ExampleAnim
 {
     /// <summary>
     /// Example label for a ExampleSMLabel.
     /// </summary>
-    public class NetworkSMLabel : MonoBehaviour
+    public class NetworkSMAnimLabel : MonoBehaviour
     {
         public void Update()
         {
-            ExampleNetworkSM[] players = GameObject.FindObjectsOfType<ExampleNetworkSM>();
+            ExampleNetworkSMAnim[] players = GameObject.FindObjectsOfType<ExampleNetworkSMAnim>();
             var targetText = new StringBuilder();
 
-            foreach (ExampleNetworkSM player in players
+            foreach (ExampleNetworkSMAnim player in players
                 .OrderBy(players => players.GetComponent<NetworkObject>().OwnerClientId))
             {
                 NetworkObject networkObject = player.GetComponent<NetworkObject>();
@@ -45,7 +45,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Example
                     currentState = currentState.Substring(currentState.LastIndexOf("+") + 1);
                 }
 
-                targetText.AppendLine($"Player: {networkObject.OwnerClientId}\n  CurrentState: {currentState}");
+                targetText.AppendLine($"Player: {networkObject.OwnerClientId}\n  CurrentState: {currentState}\n  AnimState: {player?.CurrentAnimationState}");
             }
 
             if (players.Length == 0)

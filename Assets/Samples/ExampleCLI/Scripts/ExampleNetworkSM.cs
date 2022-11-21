@@ -49,7 +49,6 @@ namespace nickmaltbie.NetworkStateMachineUnity.Example
         /// </summary>
         [InitialState]
         [OnEventDoAction(typeof(OnUpdateEvent), nameof(CheckWalking))]
-        [Animation("Idle", 0.1f)]
         [Transition(typeof(JumpEvent), typeof(JumpState))]
         [Transition(typeof(PunchEvent), typeof(PunchingState))]
         [Transition(typeof(MoveEvent), typeof(WalkingState))]
@@ -59,7 +58,6 @@ namespace nickmaltbie.NetworkStateMachineUnity.Example
         /// <summary>
         /// Yawn animation to play after the player stands still for too long.
         /// </summary>
-        [Animation("Yawn", 0.25f, true)]
         [OnEventDoAction(typeof(OnUpdateEvent), nameof(CheckWalking))]
         [Transition(typeof(PunchEvent), typeof(PunchingState))]
         [Transition(typeof(MoveEvent), typeof(WalkingState))]
@@ -70,7 +68,6 @@ namespace nickmaltbie.NetworkStateMachineUnity.Example
         /// <summary>
         /// Walking state for example state machine.
         /// </summary>
-        [Animation("Walking")]
         [OnEventDoAction(typeof(OnUpdateEvent), nameof(CheckWalking))]
         [Transition(typeof(PunchEvent), typeof(PunchingState))]
         [Transition(typeof(IdleEvent), typeof(IdleState))]
@@ -80,14 +77,12 @@ namespace nickmaltbie.NetworkStateMachineUnity.Example
         /// <summary>
         /// Jump state for example state machine.
         /// </summary>
-        [Animation("Jump")]
         [TransitionAfterTime(typeof(IdleState), 3.0f)]
         public class JumpState : State { }
 
         /// <summary>
         /// Punching state
         /// </summary>
-        [Animation("Punching", 0.35f, true, 0.75f)]
         [OnEventDoAction(typeof(OnUpdateEvent), nameof(CheckWalking))]
         [TransitionAfterTime(typeof(IdleState), 1.0f)]
         [Transition(typeof(JumpEvent), typeof(JumpState))]

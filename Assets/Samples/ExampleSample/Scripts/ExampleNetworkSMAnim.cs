@@ -19,16 +19,23 @@
 using nickmaltbie.StateMachineUnity;
 using nickmaltbie.StateMachineUnity.Attributes;
 using nickmaltbie.StateMachineUnity.Event;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace nickmaltbie.NetworkStateMachineUnity.Example
+namespace nickmaltbie.NetworkStateMachineUnity.ExampleAnim
 {
     /// <summary>
     /// Example implementation of the ExampleSMAnim.
     /// </summary>
-    public class ExampleNetworkSM : NetworkSMBehaviour
+    public class ExampleNetworkSMAnim : NetworkSMAnim
     {
+        /// <summary>
+        /// Move vector for player animation
+        /// </summary>
+        private NetworkVariable<Vector2> moveVectorAnim =
+            new NetworkVariable<Vector2>(writePerm: NetworkVariableWritePermission.Owner);
+
         /// <summary>
         /// Movement action for the player.
         /// </summary>
@@ -52,7 +59,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Example
         [Animation("Idle", 0.1f)]
         [Transition(typeof(JumpEvent), typeof(JumpState))]
         [Transition(typeof(PunchEvent), typeof(PunchingState))]
-        [Transition(typeof(MoveEvent), typeof(WalkingState))]
+        [AnimationTransition(typeof(MoveEvent), typeof(WalkingState), 0.1f, true)]
         [TransitionAfterTime(typeof(YawnState), 10.0f, false)]
         public class IdleState : State { }
 
@@ -62,9 +69,9 @@ namespace nickmaltbie.NetworkStateMachineUnity.Example
         [Animation("Yawn", 0.25f, true)]
         [OnEventDoAction(typeof(OnUpdateEvent), nameof(CheckWalking))]
         [Transition(typeof(PunchEvent), typeof(PunchingState))]
-        [Transition(typeof(MoveEvent), typeof(WalkingState))]
-        [Transition(typeof(JumpEvent), typeof(JumpState))]
-        [TransitionAfterTime(typeof(IdleState), 3.0f)]
+        [AnimationTransition(typeof(MoveEvent), typeof(WalkingState), 0.5f, true)]
+        [AnimationTransition(typeof(JumpEvent), typeof(JumpState), 0.5f, true)]
+        [TransitionOnAnimationComplete(typeof(IdleState), 0.35f, true)]
         public class YawnState : State { }
 
         /// <summary>
@@ -73,15 +80,15 @@ namespace nickmaltbie.NetworkStateMachineUnity.Example
         [Animation("Walking")]
         [OnEventDoAction(typeof(OnUpdateEvent), nameof(CheckWalking))]
         [Transition(typeof(PunchEvent), typeof(PunchingState))]
-        [Transition(typeof(IdleEvent), typeof(IdleState))]
-        [Transition(typeof(JumpEvent), typeof(JumpState))]
+        [AnimationTransition(typeof(IdleEvent), typeof(IdleState), 0.35f)]
+        [AnimationTransition(typeof(JumpEvent), typeof(JumpState), 0.1f, true)]
         public class WalkingState : State { }
 
         /// <summary>
         /// Jump state for example state machine.
         /// </summary>
         [Animation("Jump")]
-        [TransitionAfterTime(typeof(IdleState), 3.0f)]
+        [TransitionOnAnimationComplete(typeof(IdleState))]
         public class JumpState : State { }
 
         /// <summary>
@@ -89,9 +96,9 @@ namespace nickmaltbie.NetworkStateMachineUnity.Example
         /// </summary>
         [Animation("Punching", 0.35f, true, 0.75f)]
         [OnEventDoAction(typeof(OnUpdateEvent), nameof(CheckWalking))]
-        [TransitionAfterTime(typeof(IdleState), 1.0f)]
-        [Transition(typeof(JumpEvent), typeof(JumpState))]
-        [Transition(typeof(MoveEvent), typeof(WalkingState))]
+        [TransitionOnAnimationComplete(typeof(IdleState), 0.35f)]
+        [AnimationTransition(typeof(JumpEvent), typeof(JumpState), 0.35f, true)]
+        [AnimationTransition(typeof(MoveEvent), typeof(WalkingState), 0.35f, true)]
         public class PunchingState : State { }
 
         /// <summary>
@@ -144,6 +151,13 @@ namespace nickmaltbie.NetworkStateMachineUnity.Example
             if (base.IsOwner)
             {
                 Vector2 moveValue = moveAction.action.ReadValue<Vector2>();
+
+                transform.position += new Vector3(moveValue.x, 0, moveValue.y) * base.unityService.deltaTime;
+                moveVectorAnim.Value = new Vector2(
+                    Mathf.Lerp(base.AttachedAnimator.GetFloat("MoveX"), moveValue.x, 5.0f * base.unityService.deltaTime),
+                    Mathf.Lerp(base.AttachedAnimator.GetFloat("MoveY"), moveValue.y, 5.0f * base.unityService.deltaTime)
+                );
+
                 if (moveValue.magnitude > 0.001f)
                 {
                     RaiseEvent(new MoveEvent());
@@ -153,6 +167,9 @@ namespace nickmaltbie.NetworkStateMachineUnity.Example
                     RaiseEvent(new IdleEvent());
                 }
             }
+
+            base.AttachedAnimator.SetFloat("MoveX", moveVectorAnim.Value.x);
+            base.AttachedAnimator.SetFloat("MoveY", moveVectorAnim.Value.y);
         }
     }
 }
