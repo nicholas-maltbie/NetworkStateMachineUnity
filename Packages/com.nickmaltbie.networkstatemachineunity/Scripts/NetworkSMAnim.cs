@@ -107,9 +107,18 @@ namespace nickmaltbie.NetworkStateMachineUnity
 
             AttachedAnimator ??= gameObject.GetComponent<Animator>();
 
+            _currentAnimationState.OnValueChanged += (AnimSMRequestNetwork oldValue, AnimSMRequestNetwork newValue) =>
+            {
+                UpdateAnimatorStateInternal(newValue.AnimSMRequest);
+            };
+
             if (IsOwner)
             {
                 UpdateAnimationState();
+            }
+            else
+            {
+                UpdateAnimatorStateInternal(_currentAnimationState.Value.AnimSMRequest);
             }
         }
 
@@ -173,14 +182,6 @@ namespace nickmaltbie.NetworkStateMachineUnity
             if (IsOwner)
             {
                 UpdateAnimationState();
-            }
-            else
-            {
-                float currentState = AttachedAnimator.GetCurrentAnimatorStateInfo(0).shortNameHash;
-                if (CurrentAnimationState != 0 && CurrentAnimationState != currentState)
-                {
-                    UpdateAnimatorStateInternal(_currentAnimationState.Value.AnimSMRequest);
-                }
             }
 
             base.Update();

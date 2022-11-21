@@ -34,7 +34,9 @@ namespace nickmaltbie.NetworkStateMachineUnity.ExampleAnim
         /// Move vector for player animation
         /// </summary>
         private NetworkVariable<Vector2> moveVectorAnim =
-            new NetworkVariable<Vector2>(writePerm: NetworkVariableWritePermission.Owner);
+            new NetworkVariable<Vector2>(
+                readPerm: NetworkVariableReadPermission.Everyone,
+                writePerm: NetworkVariableWritePermission.Owner);
 
         /// <summary>
         /// Movement action for the player.
@@ -143,6 +145,15 @@ namespace nickmaltbie.NetworkStateMachineUnity.ExampleAnim
             };
         }
 
+        /// <inheritdoc/>
+        public override void Update()
+        {
+            base.Update();
+
+            base.AttachedAnimator.SetFloat("MoveX", moveVectorAnim.Value.x);
+            base.AttachedAnimator.SetFloat("MoveY", moveVectorAnim.Value.y);
+        }
+
         /// <summary>
         /// Check if the player is walking based on current input values.
         /// </summary>
@@ -167,9 +178,6 @@ namespace nickmaltbie.NetworkStateMachineUnity.ExampleAnim
                     RaiseEvent(new IdleEvent());
                 }
             }
-
-            base.AttachedAnimator.SetFloat("MoveX", moveVectorAnim.Value.x);
-            base.AttachedAnimator.SetFloat("MoveY", moveVectorAnim.Value.y);
         }
     }
 }

@@ -18,8 +18,13 @@
   "samples": [
     {
       "displayName": "Example Sample",
-      "description": "Example Sample folder for networking project.",
+      "description": "Example Sample folder for networking project with an example network state machine.",
       "path": "Samples~/ExampleSample"
+    },
+    {
+      "displayName": "Example CLI",
+      "description": "Example Sample folder for networking project with a simple network state machine.",
+      "path": "Samples~/ExampleCLI"
     }
   ],
   "dependencies": {

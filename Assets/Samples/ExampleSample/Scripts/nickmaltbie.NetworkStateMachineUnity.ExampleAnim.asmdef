@@ -2,6 +2,7 @@
     "name": "nickmaltbie.NetworkStateMachineUnity.ExampleAnim",
     "rootNamespace": "nickmaltbie.NetworkStateMachineUnity.ExampleAnim",
     "references": [
+        "Unity.Netcode.Components",
         "Unity.Netcode.Runtime",
         "nickmaltbie.NetworkStateMachineUnity",
         "nickmaltbie.StateMachineUnity",
