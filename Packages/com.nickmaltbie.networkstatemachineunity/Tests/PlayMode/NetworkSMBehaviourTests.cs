@@ -33,22 +33,6 @@ using static nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBe
 
 namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
 {
-    public class AEvent : IEvent { }
-
-    public class BEvent : IEvent { }
-
-    public class CEvent : IEvent { }
-
-    public class DEvent1 : IEvent { }
-
-    public class DEvent2 : IEvent { }
-
-    public class ResetEvent : IEvent { }
-
-    public class EmptyEvent : IEvent { }
-
-    public class TestEvent : IEvent { }
-
     /// <summary>
     /// Demo state machine for 
     /// </summary>
@@ -246,7 +230,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
         }
 
         [Test]
-        public void TimoutAfterUpdate()
+        public void TimeoutAfterUpdate()
         {
             for (int i = 0; i < 3; i++)
             {
@@ -271,7 +255,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
         }
 
         [Test]
-        public void FixedTimoutAfterUpdate()
+        public void FixedTimeoutAfterUpdate()
         {
             for (int i = 0; i < 3; i++)
             {
