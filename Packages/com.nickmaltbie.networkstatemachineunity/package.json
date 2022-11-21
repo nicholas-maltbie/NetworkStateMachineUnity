@@ -24,7 +24,7 @@
   ],
   "dependencies": {
     "com.nickmaltbie.testutilsunity" : "0.0.2",
-    "com.nickmaltbie.statemachineunity" : "1.1.1",
+    "com.nickmaltbie.statemachineunity" : "1.1.2",
     "com.unity.inputsystem": "1.0.0",
     "com.unity.netcode.gameobjects": "1.1.0"
   },
