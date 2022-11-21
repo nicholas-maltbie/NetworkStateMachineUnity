@@ -107,18 +107,21 @@ namespace nickmaltbie.NetworkStateMachineUnity
 
             AttachedAnimator ??= gameObject.GetComponent<Animator>();
 
-            _currentAnimationState.OnValueChanged += (AnimSMRequestNetwork oldValue, AnimSMRequestNetwork newValue) =>
-            {
-                UpdateAnimatorStateInternal(newValue.AnimSMRequest);
-            };
-
             if (IsOwner)
             {
                 UpdateAnimationState();
             }
             else
             {
-                UpdateAnimatorStateInternal(_currentAnimationState.Value.AnimSMRequest);
+                if (_currentAnimationState.Value.AnimSMRequest.targetStateHash != 0)
+                {
+                    UpdateAnimatorStateInternal(_currentAnimationState.Value.AnimSMRequest);
+                }
+
+                _currentAnimationState.OnValueChanged += (AnimSMRequestNetwork oldValue, AnimSMRequestNetwork newValue) =>
+                {
+                    UpdateAnimatorStateInternal(newValue.AnimSMRequest);
+                };
             }
         }
 

@@ -355,9 +355,10 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
             });
         }
 
-        [Test]
-        public void VerifyAnimationTransitionStateCrossFadeFixed()
+        [UnityTest]
+        public IEnumerator VerifyAnimationTransitionStateCrossFadeFixed()
         {
+            yield return null;
             InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) => 
             {
                 sm.RaiseEvent(new CEvent());
@@ -367,9 +368,10 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
             });
         }
 
-        [Test]
-        public void VerifyTransitionToUnknownAnimationStateCrossFade()
+        [UnityTest]
+        public IEnumerator VerifyTransitionToUnknownAnimationStateCrossFade()
         {
+            yield return null;
             InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) =>
             {
                 Assert.AreEqual(sm.CurrentState, typeof(StateA));
