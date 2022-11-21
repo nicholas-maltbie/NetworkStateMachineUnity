@@ -176,10 +176,6 @@ namespace nickmaltbie.NetworkStateMachineUnity
             return AttachedAnimator;
         }
 
-        /// <summary>
-        /// Performs the action of <see cref="FixedSMBehaviour.Update"/>
-        /// in addition to updating the 
-        /// </summary>
         public override void Update()
         {
             if (IsOwner)
