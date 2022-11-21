@@ -21,7 +21,6 @@ using System.Collections;
 using Moq;
 using nickmaltbie.StateMachineUnity;
 using nickmaltbie.StateMachineUnity.Attributes;
-using nickmaltbie.StateMachineUnity.Event;
 using nickmaltbie.TestUtilsUnity;
 using NUnit.Framework;
 using Unity.Netcode;
@@ -188,7 +187,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
         [Test]
         public void TimeoutAfterUpdate()
         {
-            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) => 
+            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) =>
             {
                 Assert.AreEqual(typeof(StateA), sm.CurrentState);
                 Assert.AreEqual(Animator.StringToHash(AnimA), sm.CurrentAnimationState);
@@ -210,7 +209,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
         [Test]
         public void TestAnimationLockPending()
         {
-            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) => 
+            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) =>
             {
                 Assert.AreEqual(sm.CurrentState, typeof(StateA));
                 Assert.AreEqual(sm.CurrentAnimationState, Animator.StringToHash(AnimA));
@@ -236,7 +235,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
         [Test]
         public void TestAnimationTransitionWithLocks()
         {
-            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) => 
+            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) =>
             {
                 Assert.AreEqual(sm.CurrentState, typeof(StateA));
                 Assert.AreEqual(sm.CurrentAnimationState, Animator.StringToHash(AnimA));
@@ -282,7 +281,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
         [Test]
         public void VerifyTransitionOnTimeout()
         {
-            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) => 
+            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) =>
             {
                 Assert.AreEqual(sm.CurrentState, typeof(StateA));
                 Assert.AreEqual(sm.CurrentAnimationState, Animator.StringToHash(AnimA));
@@ -304,7 +303,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
         [Test]
         public void VerifyAnimationGetAnimator()
         {
-            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) => 
+            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) =>
             {
                 Assert.AreEqual(sm.GetAnimator(), anim);
             });
@@ -313,7 +312,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
         [Test]
         public void VerifyAnimationTransitions()
         {
-            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) => 
+            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) =>
             {
                 Assert.AreEqual(sm.CurrentState, typeof(StateA));
                 Assert.AreEqual(sm.CurrentAnimationState, Animator.StringToHash(AnimA));
@@ -346,7 +345,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
         [Test]
         public void VerifyAnimationTransitionStateCrossFade()
         {
-            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) => 
+            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) =>
             {
                 sm.RaiseEvent(new BEvent());
                 sm.CrossFadeCount = 0;
@@ -359,7 +358,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
         public IEnumerator VerifyAnimationTransitionStateCrossFadeFixed()
         {
             yield return null;
-            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) => 
+            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) =>
             {
                 sm.RaiseEvent(new CEvent());
                 sm.CrossFadeCount = 0;
@@ -473,7 +472,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode
         [Test]
         public void VerifyTransitionToUnknownAnimationStateCrossFadeFixed()
         {
-            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) => 
+            InternalTestHelper((DemoNetworkSMAnim sm, Animator anim) =>
             {
                 Assert.AreEqual(sm.CurrentState, typeof(StateA));
                 Assert.AreEqual(sm.CurrentAnimationState, Animator.StringToHash(AnimA));
