@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.community.netcode.transport.websocket": {
+      "version": "https://github.com/Unity-Technologies/multiplayer-community-contributions.git?path=/Transports/com.community.netcode.transport.websocket",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e9f53f86a047b585556e615c2093c7bfe3dad136"
+    },
     "com.nickmaltbie.networkstatemachineunity": {
       "version": "file:com.nickmaltbie.networkstatemachineunity",
       "depth": 0,

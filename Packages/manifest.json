@@ -9,6 +9,7 @@
     }
   ],
   "dependencies": {
+    "com.community.netcode.transport.websocket": "https://github.com/Unity-Technologies/multiplayer-community-contributions.git?path=/Transports/com.community.netcode.transport.websocket",
     "com.nickmaltbie.screenmanager": "3.1.0",
     "com.nickmaltbie.statemachineunity": "1.1.2",
     "com.nickmaltbie.testutilsunity": "0.0.2",
