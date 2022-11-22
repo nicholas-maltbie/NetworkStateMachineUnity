@@ -2,9 +2,11 @@
     "name": "nickmaltbie.NetworkStateMachineUnity.ExampleAnim",
     "rootNamespace": "nickmaltbie.NetworkStateMachineUnity.ExampleAnim",
     "references": [
+        "WebSocket Transport for Netcode for GameObjects",
         "Unity.Netcode.Components",
         "Unity.Netcode.Runtime",
         "nickmaltbie.NetworkStateMachineUnity",
+        "nickmaltbie.ScreenManager",
         "nickmaltbie.StateMachineUnity",
         "nickmaltbie.ScreenManager.TestCommon",
         "nickmaltbie.TestUtilsUnity",

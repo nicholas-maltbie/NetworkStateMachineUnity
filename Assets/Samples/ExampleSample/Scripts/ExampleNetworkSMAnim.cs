@@ -54,7 +54,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.ExampleAnim
         public InputActionReference punchAction;
 
         /// <summary>
-        /// Idle state for example state machine.
+        /// Idle NetworkState for example NetworkState machine.
         /// </summary>
         [InitialState]
         [OnEventDoAction(typeof(OnUpdateEvent), nameof(CheckWalking))]
@@ -77,7 +77,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.ExampleAnim
         public class YawnState : State { }
 
         /// <summary>
-        /// Walking state for example state machine.
+        /// Walking NetworkState for example NetworkState machine.
         /// </summary>
         [Animation("Walking")]
         [OnEventDoAction(typeof(OnUpdateEvent), nameof(CheckWalking))]
@@ -87,14 +87,14 @@ namespace nickmaltbie.NetworkStateMachineUnity.ExampleAnim
         public class WalkingState : State { }
 
         /// <summary>
-        /// Jump state for example state machine.
+        /// Jump NetworkState for example NetworkState machine.
         /// </summary>
         [Animation("Jump")]
         [TransitionOnAnimationComplete(typeof(IdleState))]
         public class JumpState : State { }
 
         /// <summary>
-        /// Punching state
+        /// Punching NetworkState
         /// </summary>
         [Animation("Punching", 0.35f, true, 0.75f)]
         [OnEventDoAction(typeof(OnUpdateEvent), nameof(CheckWalking))]
@@ -124,7 +124,7 @@ namespace nickmaltbie.NetworkStateMachineUnity.ExampleAnim
         public class PunchEvent : IEvent { }
 
         /// <summary>
-        /// Configure actions for the example state machine with animations.
+        /// Configure actions for the example NetworkState machine with animations.
         /// </summary>
         public void Awake()
         {
