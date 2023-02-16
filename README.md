@@ -2,7 +2,7 @@
 
 ---
 
-_**NOTE**_ This project has been depreicated and replaced with [StateMachineUnity.netcode](https://github.com/nicholas-maltbie/StateMachineUnity/tree/main/Packages/com.nickmaltbie.statemachineunity.netcode). It's the same code and package just incorporated into one repo so it's easier to manage.
+_**NOTE**_ This project has been deprecated and replaced with [StateMachineUnity.netcode](https://github.com/nicholas-maltbie/StateMachineUnity/tree/main/Packages/com.nickmaltbie.statemachineunity.netcode). It's the same code and package just incorporated into one repo so it's easier to manage.
 
 This project will no longer be updated as of Feb, 26th, 2023.
 
