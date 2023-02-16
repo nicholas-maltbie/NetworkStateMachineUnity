@@ -1,5 +1,13 @@
 # Network State Machine Unity
 
+---
+
+_**NOTE**_ This project has been depreicated and replaced with [StateMachineUnity.netcode](https://github.com/nicholas-maltbie/StateMachineUnity/tree/main/Packages/com.nickmaltbie.statemachineunity.netcode). It's the same code and package just incorporated into one repo so it's easier to manage.
+
+This project will no longer be updated as of Feb, 26th, 2023.
+
+---
+
 Nick Maltbie's Network State Machine Unity
 as a networking extension for the
 [https://github.com/nicholas-maltbie/StateMachineUnity](https://github.com/nicholas-maltbie/StateMachineUnity)
