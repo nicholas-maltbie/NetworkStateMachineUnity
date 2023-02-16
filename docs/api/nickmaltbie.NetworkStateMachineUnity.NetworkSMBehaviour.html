@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class NetworkSMBehaviour
+   | Network State Machine Unity Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class NetworkSMBehaviour
+   | Network State Machine Unity Documentation ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour">
+  
+  
+  <h1 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour" class="text-break">Class NetworkSMBehaviour
+  </h1>
+  <div class="markdown level0 summary"><p>Abstract state machine to manage a set of given states
+and transitions. Supports basic unity events for
+unity updates and features.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">NetworkSMBehaviour</span></div>
+      <div class="level2"><a class="xref" href="nickmaltbie.NetworkStateMachineUnity.NetworkSMAnim.html">NetworkSMAnim</a></div>
+      <div class="level2"><a class="xref" href="nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.html">NetworkSMUtilsTests.ExampleNetworkSM</a></div>
+      <div class="level2"><a class="xref" href="nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.html">DemoNetworkSMBehaviour</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="nickmaltbie.NetworkStateMachineUnity.html">nickmaltbie.NetworkStateMachineUnity</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class NetworkSMBehaviour : NetworkBehaviour</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour__ctor_" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.#ctor*"></a>
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour__ctor" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.#ctor">NetworkSMBehaviour()</h4>
+  <div class="markdown level1 summary"><p>Initializes a state machine
+and will set the initial
+state to the state defined under this class with a
+(InitialStateAttribute)[xref:nickmaltbie.StateMachineUnity.Attributes.InitialStateAttribute].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NetworkSMBehaviour()</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_deltaTimeInCurrentState" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.deltaTimeInCurrentState">deltaTimeInCurrentState</h4>
+  <div class="markdown level1 summary"><p>Delta time from the unity update function in the current state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected float deltaTimeInCurrentState</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_fixedDeltaTimeInCurrentState" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.fixedDeltaTimeInCurrentState">fixedDeltaTimeInCurrentState</h4>
+  <div class="markdown level1 summary"><p>Fixed delta time from the unity fixed update function in the current state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected float fixedDeltaTimeInCurrentState</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_initialized" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.initialized">initialized</h4>
+  <div class="markdown level1 summary"><p>Has this network sm behaviour been initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool initialized</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_networkedState" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.networkedState">networkedState</h4>
+  <div class="markdown level1 summary"><p>Networked state for the state machine synced over the network communication.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected NetworkVariable&lt;int&gt; networkedState</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NetworkVariable</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_unityService" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.unityService">unityService</h4>
+  <div class="markdown level1 summary"><p>Unity service for managing getting static unity values
+in a testable manner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IUnityService unityService</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IUnityService</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_CurrentState_" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.CurrentState*"></a>
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_CurrentState" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.CurrentState">CurrentState</h4>
+  <div class="markdown level1 summary"><p>Current state of the state machine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type CurrentState { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_FixedUpdate_" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.FixedUpdate*"></a>
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_FixedUpdate" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.FixedUpdate">FixedUpdate()</h4>
+  <div class="markdown level1 summary"><p>Update the <a class="xref" href="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.html#nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_fixedDeltaTimeInCurrentState">fixedDeltaTimeInCurrentState</a>
+based on the <a class="xref" href="https://nickmaltbie.com/TestUtilsUnity/docs/api/nickmaltbie.TestUtilsUnity.IUnityService.html#nickmaltbie_TestUtilsUnity_IUnityService_fixedDeltaTime">IUnityService.fixedDeltaTime</a>
+as well as raising an instance of the <a class="xref" href="https://nickmaltbie.com/StateMachineUnity/docs/api/nickmaltbie.StateMachineUnity.Attributes.OnFixedUpdateEvent.html">OnFixedUpdateEvent</a>
+for this state machine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void FixedUpdate()</code></pre>
+  </div>
+  
+  
+  <a id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_LateUpdate_" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.LateUpdate*"></a>
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_LateUpdate" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.LateUpdate">LateUpdate()</h4>
+  <div class="markdown level1 summary"><p>Raises an instance of the <a class="xref" href="https://nickmaltbie.com/StateMachineUnity/docs/api/nickmaltbie.StateMachineUnity.Attributes.OnLateUpdateEvent.html">OnLateUpdateEvent</a>
+for this state machine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void LateUpdate()</code></pre>
+  </div>
+  
+  
+  <a id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_OnAnimatorIK_" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.OnAnimatorIK*"></a>
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_OnAnimatorIK" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.OnAnimatorIK">OnAnimatorIK()</h4>
+  <div class="markdown level1 summary"><p>Raises an instance of the <a class="xref" href="https://nickmaltbie.com/StateMachineUnity/docs/api/nickmaltbie.StateMachineUnity.Attributes.OnAnimatorIKEvent.html">OnAnimatorIKEvent</a>
+for this state machine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnAnimatorIK()</code></pre>
+  </div>
+  
+  
+  <a id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_OnDisable_" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.OnDisable*"></a>
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_OnDisable" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.OnDisable">OnDisable()</h4>
+  <div class="markdown level1 summary"><p>Raises an instance of the <a class="xref" href="https://nickmaltbie.com/StateMachineUnity/docs/api/nickmaltbie.StateMachineUnity.Attributes.OnDisableEvent.html">OnDisableEvent</a>
+for this state machine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnDisable()</code></pre>
+  </div>
+  
+  
+  <a id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_OnEnable_" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.OnEnable*"></a>
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_OnEnable" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.OnEnable">OnEnable()</h4>
+  <div class="markdown level1 summary"><p>Raises an instance of the <a class="xref" href="https://nickmaltbie.com/StateMachineUnity/docs/api/nickmaltbie.StateMachineUnity.Attributes.OnEnableEvent.html">OnEnableEvent</a>
+for this state machine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnEnable()</code></pre>
+  </div>
+  
+  
+  <a id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_OnGUI_" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.OnGUI*"></a>
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_OnGUI" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.OnGUI">OnGUI()</h4>
+  <div class="markdown level1 summary"><p>Raises an instance of the <a class="xref" href="https://nickmaltbie.com/StateMachineUnity/docs/api/nickmaltbie.StateMachineUnity.Attributes.OnGUIEvent.html">OnGUIEvent</a>
+for this state machine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnGUI()</code></pre>
+  </div>
+  
+  
+  <a id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_RaiseEvent_" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.RaiseEvent*"></a>
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_RaiseEvent_IEvent_" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.RaiseEvent(IEvent)">RaiseEvent(IEvent)</h4>
+  <div class="markdown level1 summary"><p>Raise a synchronous event for a given state machine.
+<br>
+First checks if this state machine expects any events of this type
+for the state machine&apos;s <a class="xref" href="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.html#nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_CurrentState">CurrentState</a>. These
+would follow an attribute of type
+<a class="xref" href="https://nickmaltbie.com/StateMachineUnity/docs/api/nickmaltbie.StateMachineUnity.Attributes.OnEventDoActionAttribute.html">OnEventDoActionAttribute</a>.
+<br>
+If the state machine&apos;s <a class="xref" href="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.html#nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_CurrentState">CurrentState</a> expects a transition
+based on the event, then this will trigger the
+<a class="xref" href="https://nickmaltbie.com/StateMachineUnity/docs/api/nickmaltbie.StateMachineUnity.Attributes.OnExitStateAttribute.html">OnExitStateAttribute</a>.
+of the <a class="xref" href="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.html#nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_CurrentState">CurrentState</a>, change to the next state defined in
+the
+<a class="xref" href="https://nickmaltbie.com/StateMachineUnity/docs/api/nickmaltbie.StateMachineUnity.Attributes.OnEnterStateAttribute.html">OnEnterStateAttribute</a>.
+of the next state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void RaiseEvent(IEvent evt)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEvent</span></td>
+        <td><span class="parametername">evt</span></td>
+        <td><p>Event to send to this state machine.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_SetStateQuiet_" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.SetStateQuiet*"></a>
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_SetStateQuiet_System_Type_" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.SetStateQuiet(System.Type)">SetStateQuiet(Type)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetStateQuiet(Type newState)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">newState</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_Start_" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.Start*"></a>
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_Start" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.Start">Start()</h4>
+  <div class="markdown level1 summary"><p>Initialize the network SM Behaviour.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Start()</code></pre>
+  </div>
+  
+  
+  <a id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_Update_" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.Update*"></a>
+  <h4 id="nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_Update" data-uid="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.Update">Update()</h4>
+  <div class="markdown level1 summary"><p>Update the <a class="xref" href="nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.html#nickmaltbie_NetworkStateMachineUnity_NetworkSMBehaviour_deltaTimeInCurrentState">deltaTimeInCurrentState</a>
+based on the <a class="xref" href="https://nickmaltbie.com/TestUtilsUnity/docs/api/nickmaltbie.TestUtilsUnity.IUnityService.html#nickmaltbie_TestUtilsUnity_IUnityService_deltaTime">IUnityService.deltaTime</a>
+as well as raising an instance of the <a class="xref" href="https://nickmaltbie.com/StateMachineUnity/docs/api/nickmaltbie.StateMachineUnity.Attributes.OnUpdateEvent.html">OnUpdateEvent</a>
+for this state machine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Update()</code></pre>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Network State Machine Unity Documentation
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

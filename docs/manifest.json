@@ -1,0 +1,635 @@
+{
+  "sitemap": {
+    "fileOptions": {
+      "latest/api/*": {
+        "changefreq": "daily"
+      }
+    },
+    "baseUrl": "https://nickmaltbie.com/NetworkStateMachineUnity/docs/",
+    "changefreq": "weekly"
+  },
+  "homepages": [],
+  "source_base_path": "D:/a/NetworkStateMachineUnity/NetworkStateMachineUnity/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "LICENSE.txt",
+      "output": {
+        "resource": {
+          "relative_path": "LICENSE.txt"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.NetworkSMAnim.AnimSMRequestNetwork.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.NetworkSMAnim.AnimSMRequestNetwork.html",
+          "hash": "Q4r9UfZAhnpm6YT3S7YaHfm6QiTTuQOhg6QlAkg54oI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.NetworkSMAnim.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.NetworkSMAnim.html",
+          "hash": "EyUcJVNU/QwvV/1RQ+0fFPTFbBO4iNAbWI2PnuhXMpw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.html",
+          "hash": "/WHmqTh3Hr3KWnFRYGnTeUG+OoN6mUAAHYD0lDV66Z4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.State0.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.State0.html",
+          "hash": "K4X5mjlWauDmv7fwVYkR8FtKvCB3tH3a6ZLNY1Tys/0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.State1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.State1.html",
+          "hash": "YXM0P5AI2B7rt8ak6NIQzM0PL9ecnXWfsY5xHbGo3ng="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.State2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.State2.html",
+          "hash": "O7l1l7yjoeoVqBOJuM2XEl+TwzizQ3x9yXddKZHQ6Gc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.html",
+          "hash": "7mwRCN+4LmtwF/Lnk6eSb4Vs9Z+EylU2PTjyGjYoMaA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.html",
+          "hash": "VlM09rE+DpamQmRqiwZcxJrUian471olsJlMaU4g4OI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.html",
+          "hash": "0MZV0xb1Oc9UsK3jXvZ6RbgyqvsW5k2JIXdYGS+BFcE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.AEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.AEvent.html",
+          "hash": "zDDRtfFJikXYQIU3dxx6buHD0dEXvgadclJmuBZ0p6M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.BEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.BEvent.html",
+          "hash": "gV5YIanTgInkc0syFSghOdkoFRu+rh+pUjkoPNC9j/E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.CEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.CEvent.html",
+          "hash": "rsFgLDQA3QNyikkqPdUhZNyBDnFQNcZu5JB6CnGMdDY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DEvent1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DEvent1.html",
+          "hash": "TiBNruZHTH34g8FlvC8PnL6Jlur48t8jvMtot0kLeok="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DEvent2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DEvent2.html",
+          "hash": "7qGKdDOOYE7TlwzE5hhd/geHD+/k4HAI3s88hEib01I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.StateA.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.StateA.html",
+          "hash": "hzhuxbwi9cNuNq9ukjIY9SyZC2WcSSDZEqq0HGFbFOw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.StateB.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.StateB.html",
+          "hash": "iTpFuOJforqIJeYKF3JsJgkAaqPbV9hpDn7pYLpRgkc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.StateC.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.StateC.html",
+          "hash": "nztxWt45NUww31q28ds/H5RJVQihh+HokAgyu0HLUuU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.StateD.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.StateD.html",
+          "hash": "9jO3EugmRerjhNCnvRUH3/LxwcGxlceJZMRtwafQn1A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.TimeoutState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.TimeoutState.html",
+          "hash": "FWgcJEcJWE+svP+/4WcSP1yoeyge9XKnJUNk7RnJezw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.html",
+          "hash": "IDzsUGPKkIOJL0l+2HC4GGdvDu6E4MzYpE+MNNUVlQU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.StartingState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.StartingState.html",
+          "hash": "ejhrby+jNGdzjrdW2LmynoWDbHTkqmA3bcMIEcIlIEM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.StateA.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.StateA.html",
+          "hash": "cnG+tZkaFltMoJUdemsxerC6tMwOsw72kx8gc4SLCWw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.StateB.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.StateB.html",
+          "hash": "sJqPqxjClSR0dMN9mlW55GoSCQ6bXe+jckGE80ITk1g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.StateC.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.StateC.html",
+          "hash": "VE/MG4E97ETyJGzbtDUwwtR33/PEb838ZpEc/biaWJw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.TempFixedTimeState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.TempFixedTimeState.html",
+          "hash": "UyfYeCYCxhaqqexr6T6zPBEvjQIUVjWBOhVXNXYXyXk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.TimeoutFixedState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.TimeoutFixedState.html",
+          "hash": "dZ8JEjVwB3KGs7G/XynJnziDSvtweNPzab5Sb5QXTks="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.TimeoutState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.TimeoutState.html",
+          "hash": "z2cAjJZU6x6m+2foxum5zuqidzneZkDFRQvTdv82QrQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.html",
+          "hash": "UUaapr80IvnZd/bl1XgSCQsIHIjJeADdBU7thzYZkA0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.EmptyEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.EmptyEvent.html",
+          "hash": "nJvTvrNGS7yMXDw8RTuswHYqXMerBWLvy2DtlRgoxrA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.NetworkSMAnimTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.NetworkSMAnimTests.html",
+          "hash": "jotMEFexvRSd4ubluX3UxB+EpF1XSqKfuPYTDzUJgF4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.NetworkSMBehaviourTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.NetworkSMBehaviourTests.html",
+          "hash": "XE1McwTb9cl/CTEVJh1Q4PZmukNdrZnCdKu94Q+Nbec="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.ResetEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.ResetEvent.html",
+          "hash": "WiHHkrnLoYwbdSrMJxji8qemmjYtBOWUQh+cV3772dA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.TestEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.TestEvent.html",
+          "hash": "o5zlZUbJaZNLqqQTfCCE10Kdh2ALJuQRiM5CDjUr+f0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.html",
+          "hash": "zwqPlU2REOAMCgRcYwaxskbptXF4SNqHkQXgJq/sZIo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Utils.NetworkSMUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Utils.NetworkSMUtils.html",
+          "hash": "znq6lo5SAQbzo2bot4HdgFLDiFqzVVrmd6q7nQqD1pY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Utils.UninitializedState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Utils.UninitializedState.html",
+          "hash": "y5GQsRmvRvwjym8TsEPC3ktUXGqDESMijnnBxtPve9k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.Utils.html",
+          "hash": "bH/t9JSxygyh9iEh4E4zmULSmIdY1q0TuZdf10V0tXg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/nickmaltbie.NetworkStateMachineUnity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/nickmaltbie.NetworkStateMachineUnity.html",
+          "hash": "YkRl50KTGOrcGSixOjCT9XVmHFeTlK/pPWMiCGq1czU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "fGqXrz6PT888Y4P0buCBWXsSjx9bCt+88PwQ+LGW3Gg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "changelog/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "changelog/CHANGELOG.html",
+          "hash": "oYhKC+LFfaaX7Aj3lFVMje20eP7ZvnNQJM/nLhNs9Ps="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "changelog/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "changelog/toc.html",
+          "hash": "1q1fO7/YyPEGJ89UlRVsP2/QXB8oQ3/9CvSsb1tfrWg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidYamlHeader"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "eDiGs8J4FQuGeHFv4THMIVlSfeTjB+Ge2ZbxSK/XPdQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/introduction.html",
+          "hash": "XSGduN0iRwLu/Mm0BSGZWed03PDJRuMGIIEmhGyDsko="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "manual/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "manual/toc.html",
+          "hash": "m2S1Yi8n1lPXDZKT5Jv0VY0xWYHT7GRxoxwMIyyIMSI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "wtCO7UFqCjMLRBSTXNi1rYYpFvO9rg4lzvRHC+r5vG8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 38,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "api/nickmaltbie.NetworkStateMachineUnity.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.html",
+    "title": "Namespace nickmaltbie.NetworkStateMachineUnity | Network State Machine Unity Documentation",
+    "keywords": "Namespace nickmaltbie.NetworkStateMachineUnity Classes NetworkSMAnim Abstract state machine to manage a set of given states and transitions. Supports basic unity events for unity updates and features. NetworkSMBehaviour Abstract state machine to manage a set of given states and transitions. Supports basic unity events for unity updates and features. Structs NetworkSMAnim.AnimSMRequestNetwork"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.NetworkSMAnim.AnimSMRequestNetwork.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.NetworkSMAnim.AnimSMRequestNetwork.html",
+    "title": "Struct NetworkSMAnim.AnimSMRequestNetwork | Network State Machine Unity Documentation",
+    "keywords": "Struct NetworkSMAnim.AnimSMRequestNetwork Namespace : nickmaltbie.NetworkStateMachineUnity Assembly : cs.temp.dll.dll Syntax public struct AnimSMRequestNetwork Constructors AnimSMRequestNetwork(AnimSMRequest) Declaration public AnimSMRequestNetwork(AnimSMRequest req) Parameters Type Name Description AnimSMRequest req Fields fixedTimeTransition Declaration public bool fixedTimeTransition Field Value Type Description Boolean lockAnimationTime Declaration public float lockAnimationTime Field Value Type Description Single targetStateHash Declaration public int targetStateHash Field Value Type Description Int32 transitionTime Declaration public float transitionTime Field Value Type Description Single Properties AnimSMRequest Declaration public readonly AnimSMRequest AnimSMRequest { get; } Property Value Type Description AnimSMRequest Methods NetworkSerialize<T>(BufferSerializer<T>) Declaration public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter Parameters Type Name Description BufferSerializer <T> serializer Type Parameters Name Description T"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.NetworkSMAnim.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.NetworkSMAnim.html",
+    "title": "Class NetworkSMAnim | Network State Machine Unity Documentation",
+    "keywords": "Class NetworkSMAnim Abstract state machine to manage a set of given states and transitions. Supports basic unity events for unity updates and features. Inheritance Object NetworkSMBehaviour NetworkSMAnim DemoNetworkSMAnim Inherited Members NetworkSMBehaviour.unityService NetworkSMBehaviour.deltaTimeInCurrentState NetworkSMBehaviour.fixedDeltaTimeInCurrentState NetworkSMBehaviour.initialized NetworkSMBehaviour.networkedState NetworkSMBehaviour.CurrentState NetworkSMBehaviour.RaiseEvent(IEvent) NetworkSMBehaviour.SetStateQuiet(Type) NetworkSMBehaviour.FixedUpdate() NetworkSMBehaviour.LateUpdate() NetworkSMBehaviour.OnGUI() NetworkSMBehaviour.OnEnable() NetworkSMBehaviour.OnDisable() NetworkSMBehaviour.OnAnimatorIK() Namespace : nickmaltbie.NetworkStateMachineUnity Assembly : cs.temp.dll.dll Syntax public abstract class NetworkSMAnim : NetworkSMBehaviour Fields _attachedAnimator Animator associated with this state machine. Declaration protected Animator _attachedAnimator Field Value Type Description Animator _currentAnimationState Networked animator state for the state machine. Declaration public NetworkVariable<NetworkSMAnim.AnimSMRequestNetwork> _currentAnimationState Field Value Type Description NetworkVariable < NetworkSMAnim.AnimSMRequestNetwork > Properties AttachedAnimator Animator associated with this state machine. Declaration public Animator AttachedAnimator { get; protected set; } Property Value Type Description Animator CurrentAnimationState Declaration public int CurrentAnimationState { get; } Property Value Type Description Int32 PendingReq Pending request for the animator. Declaration public AnimSMRequest? PendingReq { get; } Property Value Type Description Nullable < AnimSMRequest > Methods CrossFade(AnimSMRequest, Int32) Declaration public virtual void CrossFade(AnimSMRequest req, int layerIdx = 0) Parameters Type Name Description AnimSMRequest req Int32 layerIdx GetAnimator() Declaration public Animator GetAnimator() Returns Type Description Animator Start() Configure and setup the fixed state machine with animations. Declaration public override void Start() Overrides NetworkSMBehaviour.Start() Update() Declaration public override void Update() Overrides NetworkSMBehaviour.Update() UpdateAnimationState() Update the animation state of this fixed sm animator based on the current animation tag of the current state of the state machine. Declaration protected void UpdateAnimationState()"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.NetworkSMBehaviour.html",
+    "title": "Class NetworkSMBehaviour | Network State Machine Unity Documentation",
+    "keywords": "Class NetworkSMBehaviour Abstract state machine to manage a set of given states and transitions. Supports basic unity events for unity updates and features. Inheritance Object NetworkSMBehaviour NetworkSMAnim NetworkSMUtilsTests.ExampleNetworkSM DemoNetworkSMBehaviour Namespace : nickmaltbie.NetworkStateMachineUnity Assembly : cs.temp.dll.dll Syntax public abstract class NetworkSMBehaviour : NetworkBehaviour Constructors NetworkSMBehaviour() Initializes a state machine and will set the initial state to the state defined under this class with a (InitialStateAttribute)[xref:nickmaltbie.StateMachineUnity.Attributes.InitialStateAttribute]. Declaration public NetworkSMBehaviour() Fields deltaTimeInCurrentState Delta time from the unity update function in the current state. Declaration protected float deltaTimeInCurrentState Field Value Type Description Single fixedDeltaTimeInCurrentState Fixed delta time from the unity fixed update function in the current state. Declaration protected float fixedDeltaTimeInCurrentState Field Value Type Description Single initialized Has this network sm behaviour been initialized. Declaration protected bool initialized Field Value Type Description Boolean networkedState Networked state for the state machine synced over the network communication. Declaration protected NetworkVariable<int> networkedState Field Value Type Description NetworkVariable < Int32 > unityService Unity service for managing getting static unity values in a testable manner. Declaration public IUnityService unityService Field Value Type Description IUnityService Properties CurrentState Current state of the state machine. Declaration public Type CurrentState { get; } Property Value Type Description Type Methods FixedUpdate() Update the fixedDeltaTimeInCurrentState based on the IUnityService.fixedDeltaTime as well as raising an instance of the OnFixedUpdateEvent for this state machine. Declaration public virtual void FixedUpdate() LateUpdate() Raises an instance of the OnLateUpdateEvent for this state machine. Declaration public virtual void LateUpdate() OnAnimatorIK() Raises an instance of the OnAnimatorIKEvent for this state machine. Declaration public virtual void OnAnimatorIK() OnDisable() Raises an instance of the OnDisableEvent for this state machine. Declaration public virtual void OnDisable() OnEnable() Raises an instance of the OnEnableEvent for this state machine. Declaration public virtual void OnEnable() OnGUI() Raises an instance of the OnGUIEvent for this state machine. Declaration public virtual void OnGUI() RaiseEvent(IEvent) Raise a synchronous event for a given state machine. First checks if this state machine expects any events of this type for the state machine's CurrentState . These would follow an attribute of type OnEventDoActionAttribute . If the state machine's CurrentState expects a transition based on the event, then this will trigger the OnExitStateAttribute . of the CurrentState , change to the next state defined in the OnEnterStateAttribute . of the next state. Declaration public virtual void RaiseEvent(IEvent evt) Parameters Type Name Description IEvent evt Event to send to this state machine. SetStateQuiet(Type) Declaration public void SetStateQuiet(Type newState) Parameters Type Name Description Type newState Start() Initialize the network SM Behaviour. Declaration public virtual void Start() Update() Update the deltaTimeInCurrentState based on the IUnityService.deltaTime as well as raising an instance of the OnUpdateEvent for this state machine. Declaration public virtual void Update()"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.html",
+    "title": "Namespace nickmaltbie.NetworkStateMachineUnity.Tests.EditMode | Network State Machine Unity Documentation",
+    "keywords": "Namespace nickmaltbie.NetworkStateMachineUnity.Tests.EditMode Classes NetworkSMUtilsTests Tests for the NetworkSMUtils. NetworkSMUtilsTests.ExampleNetworkSM NetworkSMUtilsTests.ExampleNetworkSM.State0 NetworkSMUtilsTests.ExampleNetworkSM.State1 NetworkSMUtilsTests.ExampleNetworkSM.State2"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.html",
+    "title": "Class NetworkSMUtilsTests.ExampleNetworkSM | Network State Machine Unity Documentation",
+    "keywords": "Class NetworkSMUtilsTests.ExampleNetworkSM Inheritance Object NetworkSMBehaviour NetworkSMUtilsTests.ExampleNetworkSM Inherited Members NetworkSMBehaviour.unityService NetworkSMBehaviour.deltaTimeInCurrentState NetworkSMBehaviour.fixedDeltaTimeInCurrentState NetworkSMBehaviour.initialized NetworkSMBehaviour.networkedState NetworkSMBehaviour.CurrentState NetworkSMBehaviour.Start() NetworkSMBehaviour.RaiseEvent(IEvent) NetworkSMBehaviour.SetStateQuiet(Type) NetworkSMBehaviour.Update() NetworkSMBehaviour.FixedUpdate() NetworkSMBehaviour.LateUpdate() NetworkSMBehaviour.OnGUI() NetworkSMBehaviour.OnEnable() NetworkSMBehaviour.OnDisable() NetworkSMBehaviour.OnAnimatorIK() Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.EditMode Assembly : cs.temp.dll.dll Syntax public class ExampleNetworkSM : NetworkSMBehaviour"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.State0.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.State0.html",
+    "title": "Class NetworkSMUtilsTests.ExampleNetworkSM.State0 | Network State Machine Unity Documentation",
+    "keywords": "Class NetworkSMUtilsTests.ExampleNetworkSM.State0 Inheritance Object NetworkSMUtilsTests.ExampleNetworkSM.State0 Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.EditMode Assembly : cs.temp.dll.dll Syntax public class State0 : State"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.State1.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.State1.html",
+    "title": "Class NetworkSMUtilsTests.ExampleNetworkSM.State1 | Network State Machine Unity Documentation",
+    "keywords": "Class NetworkSMUtilsTests.ExampleNetworkSM.State1 Inheritance Object NetworkSMUtilsTests.ExampleNetworkSM.State1 Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.EditMode Assembly : cs.temp.dll.dll Syntax public class State1 : State"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.State2.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.ExampleNetworkSM.State2.html",
+    "title": "Class NetworkSMUtilsTests.ExampleNetworkSM.State2 | Network State Machine Unity Documentation",
+    "keywords": "Class NetworkSMUtilsTests.ExampleNetworkSM.State2 Inheritance Object NetworkSMUtilsTests.ExampleNetworkSM.State2 Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.EditMode Assembly : cs.temp.dll.dll Syntax public class State2 : State"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.EditMode.NetworkSMUtilsTests.html",
+    "title": "Class NetworkSMUtilsTests | Network State Machine Unity Documentation",
+    "keywords": "Class NetworkSMUtilsTests Tests for the NetworkSMUtils. Inheritance Object NetworkSMUtilsTests Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.EditMode Assembly : cs.temp.dll.dll Syntax public class NetworkSMUtilsTests : TestBase Methods Validate_NetworkSMUtils() Simple test for the network SM utils Declaration public void Validate_NetworkSMUtils()"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.AEvent.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.AEvent.html",
+    "title": "Class AEvent | Network State Machine Unity Documentation",
+    "keywords": "Class AEvent Inheritance Object AEvent Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class AEvent : IEvent"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.BEvent.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.BEvent.html",
+    "title": "Class BEvent | Network State Machine Unity Documentation",
+    "keywords": "Class BEvent Inheritance Object BEvent Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class BEvent : IEvent"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.CEvent.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.CEvent.html",
+    "title": "Class CEvent | Network State Machine Unity Documentation",
+    "keywords": "Class CEvent Inheritance Object CEvent Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class CEvent : IEvent"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.html",
+    "title": "Class DemoNetworkSMAnim | Network State Machine Unity Documentation",
+    "keywords": "Class DemoNetworkSMAnim Demo state machine for Inheritance Object NetworkSMBehaviour NetworkSMAnim DemoNetworkSMAnim Inherited Members NetworkSMAnim.PendingReq NetworkSMAnim._attachedAnimator NetworkSMAnim._currentAnimationState NetworkSMAnim.CurrentAnimationState NetworkSMAnim.AttachedAnimator NetworkSMAnim.Start() NetworkSMAnim.GetAnimator() NetworkSMAnim.Update() NetworkSMAnim.UpdateAnimationState() NetworkSMBehaviour.unityService NetworkSMBehaviour.deltaTimeInCurrentState NetworkSMBehaviour.fixedDeltaTimeInCurrentState NetworkSMBehaviour.initialized NetworkSMBehaviour.networkedState NetworkSMBehaviour.CurrentState NetworkSMBehaviour.RaiseEvent(IEvent) NetworkSMBehaviour.SetStateQuiet(Type) NetworkSMBehaviour.FixedUpdate() NetworkSMBehaviour.LateUpdate() NetworkSMBehaviour.OnGUI() NetworkSMBehaviour.OnEnable() NetworkSMBehaviour.OnDisable() NetworkSMBehaviour.OnAnimatorIK() Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class DemoNetworkSMAnim : NetworkSMAnim Fields AnimA Declaration public const string AnimA = \"animA\" Field Value Type Description String AnimB Declaration public const string AnimB = \"animB\" Field Value Type Description String AnimC Declaration public const string AnimC = \"animC\" Field Value Type Description String AnimD Declaration public const string AnimD = \"animD\" Field Value Type Description String CrossFadeCount Declaration public int CrossFadeCount Field Value Type Description Int32 CurrentlySpawning Declaration public static int CurrentlySpawning Field Value Type Description Int32 Objects Declaration public static DemoNetworkSMAnim[, ] Objects Field Value Type Description DemoNetworkSMAnim [,] unityServiceMock Declaration public Mock<IUnityService> unityServiceMock Field Value Type Description Mock < IUnityService > Methods Awake() Declaration public void Awake() CrossFade(AnimSMRequest, Int32) Declaration public override void CrossFade(AnimSMRequest req, int layerIdx = 0) Parameters Type Name Description AnimSMRequest req Int32 layerIdx Overrides NetworkSMAnim.CrossFade(AnimSMRequest, Int32) OnNetworkSpawn() Declaration public override void OnNetworkSpawn()"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.StateA.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.StateA.html",
+    "title": "Class DemoNetworkSMAnim.StateA | Network State Machine Unity Documentation",
+    "keywords": "Class DemoNetworkSMAnim.StateA Inheritance Object DemoNetworkSMAnim.StateA Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class StateA : State"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.StateB.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.StateB.html",
+    "title": "Class DemoNetworkSMAnim.StateB | Network State Machine Unity Documentation",
+    "keywords": "Class DemoNetworkSMAnim.StateB Inheritance Object DemoNetworkSMAnim.StateB Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class StateB : State"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.StateC.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.StateC.html",
+    "title": "Class DemoNetworkSMAnim.StateC | Network State Machine Unity Documentation",
+    "keywords": "Class DemoNetworkSMAnim.StateC Inheritance Object DemoNetworkSMAnim.StateC Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class StateC : State"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.StateD.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.StateD.html",
+    "title": "Class DemoNetworkSMAnim.StateD | Network State Machine Unity Documentation",
+    "keywords": "Class DemoNetworkSMAnim.StateD Inheritance Object DemoNetworkSMAnim.StateD Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class StateD : State"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.TimeoutState.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMAnim.TimeoutState.html",
+    "title": "Class DemoNetworkSMAnim.TimeoutState | Network State Machine Unity Documentation",
+    "keywords": "Class DemoNetworkSMAnim.TimeoutState Inheritance Object DemoNetworkSMAnim.TimeoutState Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class TimeoutState : State"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.html",
+    "title": "Class DemoNetworkSMBehaviour | Network State Machine Unity Documentation",
+    "keywords": "Class DemoNetworkSMBehaviour Demo state machine for Inheritance Object NetworkSMBehaviour DemoNetworkSMBehaviour Inherited Members NetworkSMBehaviour.unityService NetworkSMBehaviour.deltaTimeInCurrentState NetworkSMBehaviour.fixedDeltaTimeInCurrentState NetworkSMBehaviour.initialized NetworkSMBehaviour.networkedState NetworkSMBehaviour.CurrentState NetworkSMBehaviour.Start() NetworkSMBehaviour.SetStateQuiet(Type) NetworkSMBehaviour.Update() NetworkSMBehaviour.FixedUpdate() NetworkSMBehaviour.LateUpdate() NetworkSMBehaviour.OnGUI() NetworkSMBehaviour.OnEnable() NetworkSMBehaviour.OnDisable() NetworkSMBehaviour.OnAnimatorIK() Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class DemoNetworkSMBehaviour : NetworkSMBehaviour Fields actionStateCounts Counts of actions for each combination of (Action, State). Declaration public ConcurrentDictionary<(Type, Type), int> actionStateCounts Field Value Type Description ConcurrentDictionary < (T1, T2) < Type , Type >, Int32 > CurrentlySpawning Declaration public static int CurrentlySpawning Field Value Type Description Int32 eventCounts Times that specific events have been raised Declaration public ConcurrentDictionary<Type, int> eventCounts Field Value Type Description ConcurrentDictionary < Type , Int32 > Objects Declaration public static DemoNetworkSMBehaviour[, ] Objects Field Value Type Description DemoNetworkSMBehaviour [,] onEntryCount Times that a state is entered. Declaration public ConcurrentDictionary<Type, int> onEntryCount Field Value Type Description ConcurrentDictionary < Type , Int32 > onExitCount Times that a state is exited. Declaration public ConcurrentDictionary<Type, int> onExitCount Field Value Type Description ConcurrentDictionary < Type , Int32 > Methods DoNothing() Declaration public void DoNothing() IncrementStateEntryCount() Declaration public void IncrementStateEntryCount() OnAnimatorIKStartingState() Declaration public void OnAnimatorIKStartingState() OnDisableStartingState() Declaration public void OnDisableStartingState() OnEnableStartingState() Declaration public void OnEnableStartingState() OnEnterStartingState() Declaration public void OnEnterStartingState() OnExitStartingState() Declaration public void OnExitStartingState() OnFixedUpdateStartingState() Declaration public void OnFixedUpdateStartingState() OnGUIStartingState() Declaration public void OnGUIStartingState() OnLateUpdateStartingState() Declaration public void OnLateUpdateStartingState() OnNetworkSpawn() Declaration public override void OnNetworkSpawn() OnUpdateStartingState() Declaration public void OnUpdateStartingState() OnUpdateStateA() Declaration public void OnUpdateStateA() RaiseEvent(IEvent) Declaration public override void RaiseEvent(IEvent evt) Parameters Type Name Description IEvent evt Overrides NetworkSMBehaviour.RaiseEvent(IEvent)"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.StartingState.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.StartingState.html",
+    "title": "Class DemoNetworkSMBehaviour.StartingState | Network State Machine Unity Documentation",
+    "keywords": "Class DemoNetworkSMBehaviour.StartingState Inheritance Object DemoNetworkSMBehaviour.StartingState Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class StartingState : State"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.StateA.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.StateA.html",
+    "title": "Class DemoNetworkSMBehaviour.StateA | Network State Machine Unity Documentation",
+    "keywords": "Class DemoNetworkSMBehaviour.StateA Inheritance Object DemoNetworkSMBehaviour.StateA Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class StateA : State"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.StateB.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.StateB.html",
+    "title": "Class DemoNetworkSMBehaviour.StateB | Network State Machine Unity Documentation",
+    "keywords": "Class DemoNetworkSMBehaviour.StateB Inheritance Object DemoNetworkSMBehaviour.StateB Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class StateB : State"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.StateC.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.StateC.html",
+    "title": "Class DemoNetworkSMBehaviour.StateC | Network State Machine Unity Documentation",
+    "keywords": "Class DemoNetworkSMBehaviour.StateC Inheritance Object DemoNetworkSMBehaviour.StateC Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class StateC : State"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.TempFixedTimeState.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.TempFixedTimeState.html",
+    "title": "Class DemoNetworkSMBehaviour.TempFixedTimeState | Network State Machine Unity Documentation",
+    "keywords": "Class DemoNetworkSMBehaviour.TempFixedTimeState Inheritance Object DemoNetworkSMBehaviour.TempFixedTimeState Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class TempFixedTimeState : State"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.TimeoutFixedState.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.TimeoutFixedState.html",
+    "title": "Class DemoNetworkSMBehaviour.TimeoutFixedState | Network State Machine Unity Documentation",
+    "keywords": "Class DemoNetworkSMBehaviour.TimeoutFixedState Inheritance Object DemoNetworkSMBehaviour.TimeoutFixedState Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class TimeoutFixedState : State"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.TimeoutState.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DemoNetworkSMBehaviour.TimeoutState.html",
+    "title": "Class DemoNetworkSMBehaviour.TimeoutState | Network State Machine Unity Documentation",
+    "keywords": "Class DemoNetworkSMBehaviour.TimeoutState Inheritance Object DemoNetworkSMBehaviour.TimeoutState Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class TimeoutState : State"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DEvent1.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DEvent1.html",
+    "title": "Class DEvent1 | Network State Machine Unity Documentation",
+    "keywords": "Class DEvent1 Inheritance Object DEvent1 Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class DEvent1 : IEvent"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DEvent2.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.DEvent2.html",
+    "title": "Class DEvent2 | Network State Machine Unity Documentation",
+    "keywords": "Class DEvent2 Inheritance Object DEvent2 Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class DEvent2 : IEvent"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.EmptyEvent.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.EmptyEvent.html",
+    "title": "Class EmptyEvent | Network State Machine Unity Documentation",
+    "keywords": "Class EmptyEvent Inheritance Object EmptyEvent Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class EmptyEvent : IEvent"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.html",
+    "title": "Namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode | Network State Machine Unity Documentation",
+    "keywords": "Namespace nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Classes AEvent BEvent CEvent DemoNetworkSMAnim Demo state machine for DemoNetworkSMAnim.StateA DemoNetworkSMAnim.StateB DemoNetworkSMAnim.StateC DemoNetworkSMAnim.StateD DemoNetworkSMAnim.TimeoutState DemoNetworkSMBehaviour Demo state machine for DemoNetworkSMBehaviour.StartingState DemoNetworkSMBehaviour.StateA DemoNetworkSMBehaviour.StateB DemoNetworkSMBehaviour.StateC DemoNetworkSMBehaviour.TempFixedTimeState DemoNetworkSMBehaviour.TimeoutFixedState DemoNetworkSMBehaviour.TimeoutState DEvent1 DEvent2 EmptyEvent NetworkSMAnimTests Simple tests meant to be run in PlayMode NetworkSMBehaviourTests Simple tests meant to be run in PlayMode ResetEvent TestEvent"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.NetworkSMAnimTests.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.NetworkSMAnimTests.html",
+    "title": "Class NetworkSMAnimTests | Network State Machine Unity Documentation",
+    "keywords": "Class NetworkSMAnimTests Simple tests meant to be run in PlayMode Inheritance Object NetworkSMAnimTests Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class NetworkSMAnimTests : NetcodeIntegrationTest Properties NumberOfClients Declaration protected override int NumberOfClients { get; } Property Value Type Description Int32 Methods OnServerAndClientsCreated() Declaration protected override void OnServerAndClientsCreated() SetupTest() Declaration public IEnumerator SetupTest() Returns Type Description IEnumerator TestAnimationLockPending() Declaration public void TestAnimationLockPending() TestAnimationTransitionWithLocks() Declaration public void TestAnimationTransitionWithLocks() TimeoutAfterUpdate() Declaration public void TimeoutAfterUpdate() VerifyAnimationGetAnimator() Declaration public void VerifyAnimationGetAnimator() VerifyAnimationTransitions() Declaration public void VerifyAnimationTransitions() VerifyAnimationTransitionStateCrossFade() Declaration public void VerifyAnimationTransitionStateCrossFade() VerifyAnimationTransitionStateCrossFadeFixed() Declaration public IEnumerator VerifyAnimationTransitionStateCrossFadeFixed() Returns Type Description IEnumerator VerifyCrossFadeNotOwner() Declaration public IEnumerator VerifyCrossFadeNotOwner() Returns Type Description IEnumerator VerifyTransitionOnClients() Declaration public IEnumerator VerifyTransitionOnClients() Returns Type Description IEnumerator VerifyTransitionOnTimeout() Declaration public void VerifyTransitionOnTimeout() VerifyTransitionToUnknownAnimationStateCrossFade() Declaration public IEnumerator VerifyTransitionToUnknownAnimationStateCrossFade() Returns Type Description IEnumerator VerifyTransitionToUnknownAnimationStateCrossFadeFixed() Declaration public void VerifyTransitionToUnknownAnimationStateCrossFadeFixed()"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.NetworkSMBehaviourTests.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.NetworkSMBehaviourTests.html",
+    "title": "Class NetworkSMBehaviourTests | Network State Machine Unity Documentation",
+    "keywords": "Class NetworkSMBehaviourTests Simple tests meant to be run in PlayMode Inheritance Object NetworkSMBehaviourTests Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class NetworkSMBehaviourTests : NetcodeIntegrationTest Properties NumberOfClients Declaration protected override int NumberOfClients { get; } Property Value Type Description Int32 Methods FixedTimeoutAfterUpdate() Declaration public void FixedTimeoutAfterUpdate() OnServerAndClientsCreated() Declaration protected override void OnServerAndClientsCreated() SetupTest() Declaration public IEnumerator SetupTest() Returns Type Description IEnumerator TimeoutAfterUpdate() Declaration public void TimeoutAfterUpdate() VerifyUpdateActionCounts() Declaration public void VerifyUpdateActionCounts()"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.ResetEvent.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.ResetEvent.html",
+    "title": "Class ResetEvent | Network State Machine Unity Documentation",
+    "keywords": "Class ResetEvent Inheritance Object ResetEvent Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class ResetEvent : IEvent"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.TestEvent.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode.TestEvent.html",
+    "title": "Class TestEvent | Network State Machine Unity Documentation",
+    "keywords": "Class TestEvent Inheritance Object TestEvent Namespace : nickmaltbie.NetworkStateMachineUnity.Tests.PlayMode Assembly : cs.temp.dll.dll Syntax public class TestEvent : IEvent"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Utils.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Utils.html",
+    "title": "Namespace nickmaltbie.NetworkStateMachineUnity.Utils | Network State Machine Unity Documentation",
+    "keywords": "Namespace nickmaltbie.NetworkStateMachineUnity.Utils Classes NetworkSMUtils UninitializedState"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Utils.NetworkSMUtils.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Utils.NetworkSMUtils.html",
+    "title": "Class NetworkSMUtils | Network State Machine Unity Documentation",
+    "keywords": "Class NetworkSMUtils Inheritance Object NetworkSMUtils Namespace : nickmaltbie.NetworkStateMachineUnity.Utils Assembly : cs.temp.dll.dll Syntax public static class NetworkSMUtils Fields SMIndexStateLookup Declaration public static ConcurrentDictionary<Type, Dictionary<int, Type>> SMIndexStateLookup Field Value Type Description ConcurrentDictionary < Type , Dictionary < Int32 , Type >> SMStateIndexLookup Declaration public static ConcurrentDictionary<Type, Dictionary<Type, int>> SMStateIndexLookup Field Value Type Description ConcurrentDictionary < Type , Dictionary < Type , Int32 >> Methods LookupIndexState(Type, Int32) Declaration public static Type LookupIndexState(Type stateMachine, int index) Parameters Type Name Description Type stateMachine Int32 index Returns Type Description Type LookupStateIndex(Type, Type) Declaration public static int LookupStateIndex(Type stateMachine, Type state) Parameters Type Name Description Type stateMachine Type state Returns Type Description Int32 SetupNetworkCache(Type) Declaration public static void SetupNetworkCache(Type stateMachine) Parameters Type Name Description Type stateMachine"
+  },
+  "api/nickmaltbie.NetworkStateMachineUnity.Utils.UninitializedState.html": {
+    "href": "api/nickmaltbie.NetworkStateMachineUnity.Utils.UninitializedState.html",
+    "title": "Class UninitializedState | Network State Machine Unity Documentation",
+    "keywords": "Class UninitializedState Inheritance Object UninitializedState Namespace : nickmaltbie.NetworkStateMachineUnity.Utils Assembly : cs.temp.dll.dll Syntax public class UninitializedState : State"
+  },
+  "changelog/CHANGELOG.html": {
+    "href": "changelog/CHANGELOG.html",
+    "title": "Changelog | Network State Machine Unity Documentation",
+    "keywords": "Changelog All notable changes to this project will be documented in this file. In Progress Setup and imported basic project."
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "Network State Machine Unity | Network State Machine Unity Documentation",
+    "keywords": "Network State Machine Unity NOTE This project has been deprecated and replaced with StateMachineUnity.netcode . It's the same code and package just incorporated into one repo so it's easier to manage. This project will no longer be updated as of Feb, 26th, 2023. Nick Maltbie's Network State Machine Unity as a networking extension for the https://github.com/nicholas-maltbie/StateMachineUnity project. If you want to host and share code between unity projects easily, use this project to configure unity builds. Network State Machine Unity is an open source project hosted at https://github.com/nicholas-maltbie/NetworkStateMachineUnity This is an open source project licensed under a MIT License . Installation Install the latest version of the project by importing a project via git at this URL: https://github.com/nicholas-maltbie/NetworkStateMachineUnity.git#release/latest If you want to reference a specific tag of the project such as version v1.0.0 , add a release/#v1.0.0 to the end of the git URL to download the package from th auto-generated branch for that release. An example of importing v1.0.0 would look like this: https://github.com/nicholas-maltbie/NetworkStateMachineUnity.git#release/v0.1.0 To use the latest release, simply reference: https://github.com/nicholas-maltbie/NetworkStateMachineUnity.git#release/latest For a full list of all tags, check the NetworkStateMachineUnity Tags list on github. I will usually associated a tag with each release of the project. You can also import the project via a tarball if you download the source code and extract it on your local machine. Make sure to import via the package manifest defined at Packages\\com.nickmaltbie.NetworkStateMachineUnity\\package.json within the project. For more details about installing a project via git, see unity's documentation on Installing form a Git URL . Scoped Registry Install If you wish to install the project via a Scoped Registry and npm, you can add a scoped registry to your project from all of the com.nickmaltbie packages like this: \"scopedRegistries\": [ { \"name\": \"nickmaltbie\", \"url\": \"https://registry.npmjs.org\", \"scopes\": [ \"com.nickmaltbie\" ] } ] Then, if you want to reference a version of the project, you simply need to include the dependency with a version string and the unity package manager will be able to download it from the registry at https://registry.npmjs.org \"dependencies\": { \"com.nickmaltbie.networkstatemachineunity\": \"1.0.0\", \"com.nickmaltbie.testutilsunity\" : \"0.0.2\", \"com.nickmaltbie.statemachineunity\" : \"1.1.2\", \"com.unity.inputsystem\": \"1.0.0\", \"com.unity.netcode.gameobjects\": \"1.1.0\" } Development This project is developed using Unity Release 2021.3.11f1 . Install this version of Unity from Unity Hub using this link: unityhub://2021.3.11f1/0a5ca18544bf . Documentation Documentation on the project and scripting API is found at https://nickmaltbie.com/NetworkStateMachineUnity/docs/ for the latest version of the codebase. Demo You can see a demo of the project running here: https://nickmaltbie.com/NetworkStateMachineUnity/ . The project hosted on the website is up to date with the most recent version on the main branch of this github repo and is automatically deployed with each update to the codebase. Samples The samples in the project include: ExampleSample - Example sample for Network State Machine Unity."
+  },
+  "manual/introduction.html": {
+    "href": "manual/introduction.html",
+    "title": "Template Unity Package Introduction | Network State Machine Unity Documentation",
+    "keywords": "Template Unity Package Introduction Introduction to Nick Maltbie's Network state Machine Unity project.. Extension of the StateMachineUnity project to work with Unity's netcode package to allow for managing a state machine over a network. Installation Install the latest version of the project by importing a project via git at this URL: https://github.com/nicholas-maltbie/NetworkStateMachineUnity.git#release/latest If you want to reference a specific tag of the project such as version v1.0.0 , add a release/#v1.0.0 to the end of the git URL to download the package from th auto-generated branch for that release. An example of importing v1.0.0 would look like this: https://github.com/nicholas-maltbie/NetworkStateMachineUnity.git#release/v0.1.0 To use the latest release, simply reference: https://github.com/nicholas-maltbie/NetworkStateMachineUnity.git#release/latest For a full list of all tags, check the NetworkStateMachineUnity Tags list on github. I will usually associated a tag with each release of the project. You can also import the project via a tarball if you download the source code and extract it on your local machine. Make sure to import via the package manifest defined at Packages\\com.nickmaltbie.NetworkStateMachineUnity\\package.json within the project. For more details about installing a project via git, see unity's documentation on Installing form a Git URL . Scoped Registry Install If you wish to install the project via a Scoped Registry and npm, you can add a scoped registry to your project from all of the com.nickmaltbie packages like this: \"scopedRegistries\": [ { \"name\": \"nickmaltbie\", \"url\": \"https://registry.npmjs.org\", \"scopes\": [ \"com.nickmaltbie\" ] } ] Then, if you want to reference a version of the project, you simply need to include the dependency with a version string and the unity package manager will be able to download it from the registry at https://registry.npmjs.org \"dependencies\": { \"com.nickmaltbie.networkstatemachineunity\": \"1.0.0\", \"com.nickmaltbie.testutilsunity\" : \"0.0.2\", \"com.nickmaltbie.statemachineunity\" : \"1.1.2\", \"com.unity.inputsystem\": \"1.0.0\", \"com.unity.netcode.gameobjects\": \"1.1.0\" }"
+  }
+}
